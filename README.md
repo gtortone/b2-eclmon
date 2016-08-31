@@ -20,3 +20,14 @@ Server modules (server side)
 ----------------------------
 - web2influxdb
 - influxdb configuration file
+
+Management URLs (server side)
+-----------------------------
+- Grafana
+   - http://server-address:3000
+
+- InfluxDB - database UI
+   - http://server-address:8083
+
+- InfluxDB - graphite
+   - socket://server-address:2003
