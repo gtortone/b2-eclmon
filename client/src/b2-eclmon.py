@@ -25,6 +25,8 @@ def init_callback():
    global debug
    global doc, pvs, pvstate
 
+   signal.signal(signal.SIGCHLD, signal.SIG_DFL)
+
    stream = file('/opt/collectd-plugins/b2-ecl-sec.yaml', 'r')
 
    try:
