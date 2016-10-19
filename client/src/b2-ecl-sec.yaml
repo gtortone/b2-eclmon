@@ -5,35 +5,90 @@
 #   sector: sector number
 #   measure: "temperature" | "humidity"
 #
+
 "S1F:TEMP:TEMP01":
    id: 1
    sector: S1F
    measure: temperature
+   round: 2
 "S1F:TEMP:TEMP02":
    id: 2
    sector: S1F
    measure: temperature
+   round: 2
 "S1F:TEMP:TEMP03":
    id: 3
    sector: S1F
    measure: temperature
+   round: 2
 "S1F:RH":
    id: 1
    sector: S1F
    measure: humidity
+   round: 1
+
+
 "S2F:TEMP:TEMP01":
    id: 1
    sector: S2F
    measure: temperature
+   round: 2
 "S2F:TEMP:TEMP02":
    id: 2
    sector: S2F
    measure: temperature
+   round: 2
 "S2F:TEMP:TEMP03":
    id: 3
    sector: S2F
    measure: temperature
+   round: 2
 "S2F:RH":
    id: 1
    sector: S2F
    measure: humidity
+   round: 1
+
+
+"S3F:TEMP:TEMP01":
+   id: 1
+   sector: S3F
+   measure: temperature
+   round: 2
+"S3F:TEMP:TEMP02":
+   id: 2
+   sector: S3F
+   measure: temperature
+   round: 2
+"S3F:TEMP:TEMP03":
+   id: 3
+   sector: S3F
+   measure: temperature
+   round: 2
+"S3F:RH":
+   id: 1
+   sector: S3F
+   measure: humidity
+   round: 1
+
+
+"S4F:TEMP:TEMP01":
+   id: 1
+   sector: S4F
+   measure: temperature
+   round: 2
+"S4F:TEMP:TEMP02":
+   id: 2
+   sector: S4F
+   measure: temperature
+   round: 2
+"S4F:TEMP:TEMP03":
+   id: 3
+   sector: S4F
+   measure: temperature
+   round: 2
+"S4F:RH":
+   id: 1
+   sector: S4F
+   measure: humidity
+   round: 1
