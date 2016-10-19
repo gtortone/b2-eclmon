@@ -67,7 +67,7 @@ def read_callback(data=None):
                metric.plugin = doc[pv.pvname]['sector']
                metric.type = doc[pv.pvname]['measure']
                metric.plugin_instance = str(doc[pv.pvname]['id'])
-               metric.values = [pv.value]
+	       metric.values = [round(pv.value,2)]
                metric.meta = {'0': True}
                metric.dispatch()
 
