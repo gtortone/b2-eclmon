@@ -52,6 +52,8 @@ def read_callback(data=None):
    global debug
    global doc, pvs, pvstate
    
+   # EPICS PVs
+
    for pv in pvs:
 
       if pv.pvname in pvstate:
@@ -70,6 +72,36 @@ def read_callback(data=None):
 	       metric.values = [round(pv.value,doc[pv.pvname]['round'])]
                metric.meta = {'0': True}
                metric.dispatch()
+
+   # uSOP board voltages
+
+   f = open("/sys/bus/iio/devices/iio:device0/in_voltage7_raw",'r')
+   value_raw = int(f.read());
+   value_sys_V = 2 * (1.8 * value_raw) / 4095
+   f.close()
+
+   if value_sys_V <> None:
+      metric = collectd.Values()
+      metric.plugin = "board"
+      metric.type = "voltage"
+      metric.plugin_instance = "1";
+      metric.values = [round(value_sys_V, 2)]
+      metric.meta = {'0': True}
+      metric.dispatch()
+
+   f = open("/sys/bus/iio/devices/iio:device0/in_voltage1_raw",'r')
+   value_raw = int(f.read());
+   value_bus_V = 2 * (1.8 * value_raw) / 4095
+   f.close()      
+
+   if value_bus_V <> None:
+      metric = collectd.Values()
+      metric.plugin = "bus"
+      metric.type = "voltage"
+      metric.plugin_instance = "1";
+      metric.values = [round(value_bus_V, 2)]
+      metric.meta = {'0': True}
+      metric.dispatch()
 
 collectd.register_init(init_callback)
 collectd.register_read(read_callback)
