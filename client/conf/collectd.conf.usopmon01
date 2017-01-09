@@ -1,0 +1,99 @@
+LoadPlugin logfile
+LoadPlugin write_http
+LoadPlugin ping
+LoadPlugin snmp
+
+Interval 10
+
+<Plugin logfile>
+  LogLevel info
+  File "/var/log/collectd.log"
+  Timestamp true
+</Plugin>
+
+<Plugin write_http>
+    <URL "http://b2ecl.na.infn.it:8800/put/">
+      Format "JSON"
+      #BufferSize 1024
+      StoreRates true
+    </URL>
+</Plugin>
+
+<Plugin "ping">
+  Host "usopfw01"
+  Host "usopfw02"
+  Host "usopfw03"
+  Host "usopfw04"
+  Host "usopbw01"
+  Host "usopbw02"
+  Host "usopbw03"
+  Host "usopbw04"
+</Plugin>
+
+<Plugin snmp>
+  <Data "pdu_temperature">
+    Type "temperature"
+    Table false
+    Values "ATEN-PE-CFG::sensorTemperature.1"
+  </Data>
+  <Data "pdu_humidity">
+    Type "humidity"
+    Table false
+    Values "ATEN-PE-CFG::sensorHumidity.1"
+  </Data>
+  <Data "pdu_voltage">
+    Type "voltage"
+    Table false
+    Values "ATEN-PE-CFG::deviceVoltage.1"
+  </Data>
+  <Data "pdu_current">
+    Type "current"
+    Table false
+    Values "ATEN-PE-CFG::deviceCurrent.1"
+  </Data>
+  <Data "pdu_power">
+    Type "power"
+    Table false
+    Values "ATEN-PE-CFG::devicePower.1"
+  </Data>
+  <Data "pdu_outlet_voltage">
+    Type "voltage"
+    Table true
+    Instance "ATEN-PE-CFG::outletName"
+    Values "ATEN-PE-CFG::outletVoltage"
+  </Data>
+  <Data "pdu_outlet_current">
+    Type "current"
+    Table true
+    Instance "ATEN-PE-CFG::outletName"
+    Values "ATEN-PE-CFG::outletCurrent"
+  </Data>
+  <Data "pdu_outlet_power">
+    Type "power"
+    Table true
+    Instance "ATEN-PE-CFG::outletName"
+    Values "ATEN-PE-CFG::outletPower"
+  </Data>
+  <Data "pdu_outlet_status">
+    Type "gauge"
+    Table true 
+    Instance "ATEN-PE-CFG::outletName"
+    Values "ATEN-PE-CFG::displayOutletStatus"
+  </Data>
+
+  <Host "usoppdu01">
+      Address "usoppdu01"
+      Version 2
+      Community "__"
+      Collect "pdu_temperature" "pdu_humidity" "pdu_voltage" "pdu_current" "pdu_power" "pdu_outlet_voltage" "pdu_outlet_current" "pdu_outlet_power" "pdu_outlet_status"
+      Interval 60
+  </Host>
+  <Host "usoppdu02">
+      Address "usoppdu02"
+      Version 2
+      Community "__"
+      Collect "pdu_temperature" "pdu_humidity" "pdu_voltage" "pdu_current" "pdu_power" "pdu_outlet_voltage" "pdu_outlet_current" "pdu_outlet_power" "pdu_outlet_status"
+      Interval 60
+  </Host>
+</Plugin>
+
