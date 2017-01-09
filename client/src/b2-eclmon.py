@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import os
 import collectd
 import signal
 import epics
@@ -9,6 +10,8 @@ import yaml
 example of metric name:
     collectd.usop.S1B.1.humidity
 """
+
+os.environ["PYEPICS_LIBCA"] = "/opt/epics/base/lib/linux-arm/libca.so"
 
 debug = False
 
