@@ -15,13 +15,12 @@ import tornado.web
 import json, socket
 
 from tornado.options import define, options
-#define("port", default=8000, help="run on the given port", type=int)
+define("port", default=8000, help="run on the given port", type=int)
 define("https", default="yes", help="enable http with SSL")
 define("auth_user", default="admin", help="authentication username")
 define("auth_pass", default="4dm1n", help="authentication password")
 define("ssl_cert", default="ssl-cert.crt", help="SSL certificate file")
 define("ssl_key", default="ssl-key.key", help="SSL key file")
-define("port", default=9000, help="run on the given port", type=int)
 
 debug = True
 #debug = False
