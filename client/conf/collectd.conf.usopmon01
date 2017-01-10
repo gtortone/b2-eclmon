@@ -12,9 +12,12 @@ Interval 10
 </Plugin>
 
 <Plugin write_http>
-    <URL "http://b2ecl.na.infn.it:8800/put/">
+    <URL "https://b2ecl.na.infn.it:8800/put/">
+      User "admin"
+      Password "4dm1n"
+      VerifyHost false
+      VerifyPeer false
       Format "JSON"
-      #BufferSize 1024
       StoreRates true
     </URL>
 </Plugin>
