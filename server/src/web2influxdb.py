@@ -22,8 +22,7 @@ define("auth_pass", default="4dm1n", help="authentication password")
 define("ssl_cert", default="ssl-cert.crt", help="SSL certificate file")
 define("ssl_key", default="ssl-key.key", help="SSL key file")
 
-debug = True
-#debug = False
+debug = False
 ghost = "localhost"	# modify here
 gport = 2003
 
