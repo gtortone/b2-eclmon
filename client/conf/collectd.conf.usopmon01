@@ -11,17 +11,6 @@ Interval 10
   Timestamp true
 </Plugin>
 
-<Plugin write_http>
-    <URL "https://b2ecl.na.infn.it:8800/put/">
-      User "admin"
-      Password "4dm1n"
-      VerifyHost false
-      VerifyPeer false
-      Format "JSON"
-      StoreRates true
-    </URL>
-</Plugin>
-
 <Plugin "ping">
   Host "usopfw01"
   Host "usopfw02"
@@ -87,16 +76,27 @@ Interval 10
   <Host "usoppdu01">
       Address "usoppdu01"
       Version 2
-      Community "__"
+      Community "n0npublic"
       Collect "pdu_temperature" "pdu_humidity" "pdu_voltage" "pdu_current" "pdu_power" "pdu_outlet_voltage" "pdu_outlet_current" "pdu_outlet_power" "pdu_outlet_status"
       Interval 60
   </Host>
   <Host "usoppdu02">
       Address "usoppdu02"
       Version 2
-      Community "__"
+      Community "n0npublic"
       Collect "pdu_temperature" "pdu_humidity" "pdu_voltage" "pdu_current" "pdu_power" "pdu_outlet_voltage" "pdu_outlet_current" "pdu_outlet_power" "pdu_outlet_status"
       Interval 60
   </Host>
+</Plugin>
+
+<Plugin write_http>
+  <Node "http-collector">
+    URL "https://b2ecl.na.infn.it:8800/put/"
+    Header "Authorization: Basic XXXXXXXXXXXXXXXX"	# modify here with base64 encoding of "user:pass"
+    VerifyHost false
+    VerifyPeer false
+    Format "JSON"
+    StoreRates true
+  </Node>
 </Plugin>
 
