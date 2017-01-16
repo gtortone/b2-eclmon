@@ -12,6 +12,7 @@ Interval 10
 </Plugin>
 
 <Plugin "ping">
+  Interval 10
   Host "usopfw01"
   Host "usopfw02"
   Host "usopfw03"
