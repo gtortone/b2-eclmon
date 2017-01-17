@@ -1,5 +1,6 @@
 #!/bin/bash
 
+wizzy init
 wizzy import orgs
 wizzy import dashboards
 wizzy import datasources
