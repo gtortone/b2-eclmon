@@ -1,0 +1,2473 @@
+{
+  "annotations": {
+    "list": []
+  },
+  "editable": false,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "hideControls": true,
+  "id": 10,
+  "links": [
+    {
+      "icon": "external link",
+      "tags": [
+        "rack"
+      ],
+      "type": "dashboards"
+    }
+  ],
+  "refresh": "5s",
+  "rows": [
+    {
+      "collapse": false,
+      "height": 8,
+      "panels": [
+        {
+          "content": "<html><h3><center><b>uSOP boards status</b></center></html>",
+          "id": 19,
+          "links": [],
+          "mode": "html",
+          "span": 12,
+          "title": "",
+          "transparent": true,
+          "type": "text"
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Dashboard Row",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 31,
+      "panels": [
+        {
+          "content": "",
+          "id": 11,
+          "links": [],
+          "mode": "markdown",
+          "span": 2,
+          "title": "",
+          "transparent": true,
+          "type": "text"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": true,
+          "colors": [
+            "rgba(68, 245, 54, 0.9)",
+            "rgba(244, 0, 0, 0.89)",
+            "rgba(239, 14, 14, 0.97)"
+          ],
+          "datasource": null,
+          "format": "none",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "hideTimeOverride": false,
+          "id": 1,
+          "interval": null,
+          "links": [],
+          "mappingType": 2,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "0",
+              "text": "Online",
+              "to": "0.5"
+            },
+            {
+              "from": "0.5",
+              "text": "Offline",
+              "to": "100000"
+            }
+          ],
+          "span": 1,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+          },
+          "targets": [
+            {
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "ping.usopfw01",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "last"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "resource",
+                  "operator": "=",
+                  "value": "ping_droprate"
+                }
+              ]
+            }
+          ],
+          "thresholds": "0.6",
+          "title": "usopfw01",
+          "transparent": true,
+          "type": "singlestat",
+          "valueFontSize": "50%",
+          "valueMaps": [],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": true,
+          "colors": [
+            "rgba(68, 245, 54, 0.9)",
+            "rgba(244, 0, 0, 0.89)",
+            "rgba(239, 14, 14, 0.97)"
+          ],
+          "datasource": null,
+          "format": "none",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "hideTimeOverride": false,
+          "id": 23,
+          "interval": null,
+          "links": [],
+          "mappingType": 2,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "0",
+              "text": "Online",
+              "to": "0.5"
+            },
+            {
+              "from": "0.5",
+              "text": "Offline",
+              "to": "100000"
+            }
+          ],
+          "span": 1,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+          },
+          "targets": [
+            {
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "ping.usopfw02",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "last"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "resource",
+                  "operator": "=",
+                  "value": "ping_droprate"
+                }
+              ]
+            }
+          ],
+          "thresholds": "0.6",
+          "title": "usopfw02",
+          "transparent": true,
+          "type": "singlestat",
+          "valueFontSize": "50%",
+          "valueMaps": [],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": true,
+          "colors": [
+            "rgba(68, 245, 54, 0.9)",
+            "rgba(244, 0, 0, 0.89)",
+            "rgba(239, 14, 14, 0.97)"
+          ],
+          "datasource": null,
+          "format": "none",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "hideTimeOverride": false,
+          "id": 24,
+          "interval": null,
+          "links": [],
+          "mappingType": 2,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "0",
+              "text": "Online",
+              "to": "0.5"
+            },
+            {
+              "from": "0.5",
+              "text": "Offline",
+              "to": "100000"
+            }
+          ],
+          "span": 1,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+          },
+          "targets": [
+            {
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "ping.usopfw03",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "last"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "resource",
+                  "operator": "=",
+                  "value": "ping_droprate"
+                }
+              ]
+            }
+          ],
+          "thresholds": "0.6",
+          "title": "usopfw03",
+          "transparent": true,
+          "type": "singlestat",
+          "valueFontSize": "50%",
+          "valueMaps": [],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": true,
+          "colors": [
+            "rgba(68, 245, 54, 0.9)",
+            "rgba(244, 0, 0, 0.89)",
+            "rgba(239, 14, 14, 0.97)"
+          ],
+          "datasource": null,
+          "format": "none",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "hideTimeOverride": false,
+          "id": 25,
+          "interval": null,
+          "links": [],
+          "mappingType": 2,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "0",
+              "text": "Online",
+              "to": "0.5"
+            },
+            {
+              "from": "0.5",
+              "text": "Offline",
+              "to": "100000"
+            }
+          ],
+          "span": 1,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+          },
+          "targets": [
+            {
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "ping.usopfw04",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "last"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "resource",
+                  "operator": "=",
+                  "value": "ping_droprate"
+                }
+              ]
+            }
+          ],
+          "thresholds": "0.6",
+          "title": "usopfw04",
+          "transparent": true,
+          "type": "singlestat",
+          "valueFontSize": "50%",
+          "valueMaps": [],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": true,
+          "colors": [
+            "rgba(68, 245, 54, 0.9)",
+            "rgba(244, 0, 0, 0.89)",
+            "rgba(239, 14, 14, 0.97)"
+          ],
+          "datasource": null,
+          "format": "none",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "hideTimeOverride": false,
+          "id": 26,
+          "interval": null,
+          "links": [],
+          "mappingType": 2,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "0",
+              "text": "Online",
+              "to": "0.5"
+            },
+            {
+              "from": "0.5",
+              "text": "Offline",
+              "to": "100000"
+            }
+          ],
+          "span": 1,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+          },
+          "targets": [
+            {
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "ping.usopbw01",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "last"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "resource",
+                  "operator": "=",
+                  "value": "ping_droprate"
+                }
+              ]
+            }
+          ],
+          "thresholds": "0.6",
+          "title": "usopbw01",
+          "transparent": true,
+          "type": "singlestat",
+          "valueFontSize": "50%",
+          "valueMaps": [],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": true,
+          "colors": [
+            "rgba(68, 245, 54, 0.9)",
+            "rgba(244, 0, 0, 0.89)",
+            "rgba(239, 14, 14, 0.97)"
+          ],
+          "datasource": null,
+          "format": "none",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "hideTimeOverride": false,
+          "id": 27,
+          "interval": null,
+          "links": [],
+          "mappingType": 2,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "0",
+              "text": "Online",
+              "to": "0.5"
+            },
+            {
+              "from": "0.5",
+              "text": "Offline",
+              "to": "100000"
+            }
+          ],
+          "span": 1,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+          },
+          "targets": [
+            {
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "ping.usopbw02",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "last"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "resource",
+                  "operator": "=",
+                  "value": "ping_droprate"
+                }
+              ]
+            }
+          ],
+          "thresholds": "0.6",
+          "title": "usopbw02",
+          "transparent": true,
+          "type": "singlestat",
+          "valueFontSize": "50%",
+          "valueMaps": [],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": true,
+          "colors": [
+            "rgba(68, 245, 54, 0.9)",
+            "rgba(244, 0, 0, 0.89)",
+            "rgba(239, 14, 14, 0.97)"
+          ],
+          "datasource": null,
+          "format": "none",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "hideTimeOverride": false,
+          "id": 28,
+          "interval": null,
+          "links": [],
+          "mappingType": 2,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "0",
+              "text": "Online",
+              "to": "0.5"
+            },
+            {
+              "from": "0.5",
+              "text": "Offline",
+              "to": "100000"
+            }
+          ],
+          "span": 1,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+          },
+          "targets": [
+            {
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "ping.usopbw03",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "last"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "resource",
+                  "operator": "=",
+                  "value": "ping_droprate"
+                }
+              ]
+            }
+          ],
+          "thresholds": "0.6",
+          "title": "usopbw03",
+          "transparent": true,
+          "type": "singlestat",
+          "valueFontSize": "50%",
+          "valueMaps": [],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": true,
+          "colors": [
+            "rgba(68, 245, 54, 0.9)",
+            "rgba(244, 0, 0, 0.89)",
+            "rgba(239, 14, 14, 0.97)"
+          ],
+          "datasource": null,
+          "format": "none",
+          "gauge": {
+            "maxValue": 100,
+            "minValue": 0,
+            "show": false,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "hideTimeOverride": false,
+          "id": 29,
+          "interval": null,
+          "links": [],
+          "mappingType": 2,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "0",
+              "text": "Online",
+              "to": "0.5"
+            },
+            {
+              "from": "0.5",
+              "text": "Offline",
+              "to": "100000"
+            }
+          ],
+          "span": 1,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+          },
+          "targets": [
+            {
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "ping.usopbw04",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "last"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "resource",
+                  "operator": "=",
+                  "value": "ping_droprate"
+                }
+              ]
+            }
+          ],
+          "thresholds": "0.6",
+          "title": "usopbw04",
+          "transparent": true,
+          "type": "singlestat",
+          "valueFontSize": "50%",
+          "valueMaps": [],
+          "valueName": "current"
+        },
+        {
+          "content": "",
+          "id": 30,
+          "links": [],
+          "mode": "markdown",
+          "span": 2,
+          "title": "",
+          "transparent": true,
+          "type": "text"
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Dashboard Row",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 250,
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": null,
+          "fill": 1,
+          "id": 3,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": false,
+            "max": true,
+            "min": true,
+            "rightSide": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "usopfw01",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [
+                    "$interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "previous"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "ping.usopfw01",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "resource",
+                  "operator": "=",
+                  "value": "ping"
+                },
+                {
+                  "condition": "AND",
+                  "key": "host",
+                  "operator": "=",
+                  "value": "usopmon01"
+                }
+              ]
+            },
+            {
+              "alias": "usopfw02",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [
+                    "$interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "previous"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "ping.usopfw02",
+              "policy": "default",
+              "refId": "B",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "resource",
+                  "operator": "=",
+                  "value": "ping"
+                },
+                {
+                  "condition": "AND",
+                  "key": "host",
+                  "operator": "=",
+                  "value": "usopmon01"
+                }
+              ]
+            },
+            {
+              "alias": "usopfw03",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [
+                    "$interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "previous"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "ping.usopfw03",
+              "policy": "default",
+              "refId": "C",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "resource",
+                  "operator": "=",
+                  "value": "ping"
+                },
+                {
+                  "condition": "AND",
+                  "key": "host",
+                  "operator": "=",
+                  "value": "usopmon01"
+                }
+              ]
+            },
+            {
+              "alias": "usopfw04",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [
+                    "$interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "previous"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "ping.usopfw04",
+              "policy": "default",
+              "refId": "D",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "resource",
+                  "operator": "=",
+                  "value": "ping"
+                },
+                {
+                  "condition": "AND",
+                  "key": "host",
+                  "operator": "=",
+                  "value": "usopmon01"
+                }
+              ]
+            },
+            {
+              "alias": "usopbw01",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [
+                    "$interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "previous"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "ping.usopbw01",
+              "policy": "default",
+              "refId": "E",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "resource",
+                  "operator": "=",
+                  "value": "ping"
+                },
+                {
+                  "condition": "AND",
+                  "key": "host",
+                  "operator": "=",
+                  "value": "usopmon01"
+                }
+              ]
+            },
+            {
+              "alias": "usopbw02",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [
+                    "$interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "previous"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "ping.usopbw02",
+              "policy": "default",
+              "refId": "F",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "resource",
+                  "operator": "=",
+                  "value": "ping"
+                },
+                {
+                  "condition": "AND",
+                  "key": "host",
+                  "operator": "=",
+                  "value": "usopmon01"
+                }
+              ]
+            },
+            {
+              "alias": "usopbw03",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [
+                    "$interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "previous"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "ping.usopbw03",
+              "policy": "default",
+              "refId": "G",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "resource",
+                  "operator": "=",
+                  "value": "ping"
+                },
+                {
+                  "condition": "AND",
+                  "key": "host",
+                  "operator": "=",
+                  "value": "usopmon01"
+                }
+              ]
+            },
+            {
+              "alias": "usopbw04",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [
+                    "$interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "previous"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "ping.usopbw04",
+              "policy": "default",
+              "refId": "H",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "resource",
+                  "operator": "=",
+                  "value": "ping"
+                },
+                {
+                  "condition": "AND",
+                  "key": "host",
+                  "operator": "=",
+                  "value": "usopmon01"
+                }
+              ]
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "RTT from usopmon01",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "transparent": true,
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "ms",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": "0",
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Dashboard Row",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 250,
+      "panels": [
+        {
+          "alert": {
+            "conditions": [
+              {
+                "evaluator": {
+                  "params": [
+                    50
+                  ],
+                  "type": "gt"
+                },
+                "operator": {
+                  "type": "and"
+                },
+                "query": {
+                  "datasourceId": 1,
+                  "model": {
+                    "alias": "usopfw01",
+                    "dsType": "influxdb",
+                    "groupBy": [
+                      {
+                        "params": [
+                          "$interval"
+                        ],
+                        "type": "time"
+                      },
+                      {
+                        "params": [
+                          "previous"
+                        ],
+                        "type": "fill"
+                      }
+                    ],
+                    "measurement": "ping.usopfw01",
+                    "policy": "default",
+                    "refId": "A",
+                    "resultFormat": "time_series",
+                    "select": [
+                      [
+                        {
+                          "params": [
+                            "value"
+                          ],
+                          "type": "field"
+                        },
+                        {
+                          "params": [],
+                          "type": "last"
+                        },
+                        {
+                          "params": [
+                            " * 100"
+                          ],
+                          "type": "math"
+                        }
+                      ]
+                    ],
+                    "tags": [
+                      {
+                        "key": "resource",
+                        "operator": "=",
+                        "value": "ping_droprate"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "A",
+                    "5m",
+                    "now"
+                  ]
+                },
+                "reducer": {
+                  "params": [],
+                  "type": "avg"
+                },
+                "type": "query"
+              },
+              {
+                "evaluator": {
+                  "params": [
+                    50
+                  ],
+                  "type": "gt"
+                },
+                "operator": {
+                  "type": "or"
+                },
+                "query": {
+                  "datasourceId": 1,
+                  "model": {
+                    "alias": "usopfw02",
+                    "dsType": "influxdb",
+                    "groupBy": [
+                      {
+                        "params": [
+                          "$interval"
+                        ],
+                        "type": "time"
+                      },
+                      {
+                        "params": [
+                          "previous"
+                        ],
+                        "type": "fill"
+                      }
+                    ],
+                    "measurement": "ping.usopfw02",
+                    "policy": "default",
+                    "refId": "B",
+                    "resultFormat": "time_series",
+                    "select": [
+                      [
+                        {
+                          "params": [
+                            "value"
+                          ],
+                          "type": "field"
+                        },
+                        {
+                          "params": [],
+                          "type": "last"
+                        },
+                        {
+                          "params": [
+                            " * 100"
+                          ],
+                          "type": "math"
+                        }
+                      ]
+                    ],
+                    "tags": [
+                      {
+                        "key": "resource",
+                        "operator": "=",
+                        "value": "ping_droprate"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "B",
+                    "5m",
+                    "now"
+                  ]
+                },
+                "reducer": {
+                  "params": [],
+                  "type": "avg"
+                },
+                "type": "query"
+              },
+              {
+                "evaluator": {
+                  "params": [
+                    50
+                  ],
+                  "type": "gt"
+                },
+                "operator": {
+                  "type": "or"
+                },
+                "query": {
+                  "datasourceId": 1,
+                  "model": {
+                    "alias": "usopfw03",
+                    "dsType": "influxdb",
+                    "groupBy": [
+                      {
+                        "params": [
+                          "$interval"
+                        ],
+                        "type": "time"
+                      },
+                      {
+                        "params": [
+                          "previous"
+                        ],
+                        "type": "fill"
+                      }
+                    ],
+                    "measurement": "ping.usopfw03",
+                    "policy": "default",
+                    "refId": "C",
+                    "resultFormat": "time_series",
+                    "select": [
+                      [
+                        {
+                          "params": [
+                            "value"
+                          ],
+                          "type": "field"
+                        },
+                        {
+                          "params": [],
+                          "type": "last"
+                        },
+                        {
+                          "params": [
+                            " * 100"
+                          ],
+                          "type": "math"
+                        }
+                      ]
+                    ],
+                    "tags": [
+                      {
+                        "key": "resource",
+                        "operator": "=",
+                        "value": "ping_droprate"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "C",
+                    "5m",
+                    "now"
+                  ]
+                },
+                "reducer": {
+                  "params": [],
+                  "type": "avg"
+                },
+                "type": "query"
+              },
+              {
+                "evaluator": {
+                  "params": [
+                    50
+                  ],
+                  "type": "gt"
+                },
+                "operator": {
+                  "type": "or"
+                },
+                "query": {
+                  "datasourceId": 1,
+                  "model": {
+                    "alias": "usopfw04",
+                    "dsType": "influxdb",
+                    "groupBy": [
+                      {
+                        "params": [
+                          "$interval"
+                        ],
+                        "type": "time"
+                      },
+                      {
+                        "params": [
+                          "previous"
+                        ],
+                        "type": "fill"
+                      }
+                    ],
+                    "measurement": "ping.usopfw04",
+                    "policy": "default",
+                    "refId": "D",
+                    "resultFormat": "time_series",
+                    "select": [
+                      [
+                        {
+                          "params": [
+                            "value"
+                          ],
+                          "type": "field"
+                        },
+                        {
+                          "params": [],
+                          "type": "last"
+                        },
+                        {
+                          "params": [
+                            " * 100"
+                          ],
+                          "type": "math"
+                        }
+                      ]
+                    ],
+                    "tags": [
+                      {
+                        "key": "resource",
+                        "operator": "=",
+                        "value": "ping_droprate"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "D",
+                    "5m",
+                    "now"
+                  ]
+                },
+                "reducer": {
+                  "params": [],
+                  "type": "avg"
+                },
+                "type": "query"
+              },
+              {
+                "evaluator": {
+                  "params": [
+                    50
+                  ],
+                  "type": "gt"
+                },
+                "operator": {
+                  "type": "or"
+                },
+                "query": {
+                  "datasourceId": 1,
+                  "model": {
+                    "alias": "usopbw01",
+                    "dsType": "influxdb",
+                    "groupBy": [
+                      {
+                        "params": [
+                          "$interval"
+                        ],
+                        "type": "time"
+                      },
+                      {
+                        "params": [
+                          "previous"
+                        ],
+                        "type": "fill"
+                      }
+                    ],
+                    "measurement": "ping.usopbw01",
+                    "policy": "default",
+                    "refId": "E",
+                    "resultFormat": "time_series",
+                    "select": [
+                      [
+                        {
+                          "params": [
+                            "value"
+                          ],
+                          "type": "field"
+                        },
+                        {
+                          "params": [],
+                          "type": "last"
+                        },
+                        {
+                          "params": [
+                            " * 100"
+                          ],
+                          "type": "math"
+                        }
+                      ]
+                    ],
+                    "tags": [
+                      {
+                        "key": "resource",
+                        "operator": "=",
+                        "value": "ping_droprate"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "E",
+                    "5m",
+                    "now"
+                  ]
+                },
+                "reducer": {
+                  "params": [],
+                  "type": "avg"
+                },
+                "type": "query"
+              },
+              {
+                "evaluator": {
+                  "params": [
+                    50
+                  ],
+                  "type": "gt"
+                },
+                "operator": {
+                  "type": "or"
+                },
+                "query": {
+                  "datasourceId": 1,
+                  "model": {
+                    "alias": "usopbw02",
+                    "dsType": "influxdb",
+                    "groupBy": [
+                      {
+                        "params": [
+                          "$interval"
+                        ],
+                        "type": "time"
+                      },
+                      {
+                        "params": [
+                          "previous"
+                        ],
+                        "type": "fill"
+                      }
+                    ],
+                    "measurement": "ping.usopbw02",
+                    "policy": "default",
+                    "refId": "F",
+                    "resultFormat": "time_series",
+                    "select": [
+                      [
+                        {
+                          "params": [
+                            "value"
+                          ],
+                          "type": "field"
+                        },
+                        {
+                          "params": [],
+                          "type": "last"
+                        },
+                        {
+                          "params": [
+                            " * 100"
+                          ],
+                          "type": "math"
+                        }
+                      ]
+                    ],
+                    "tags": [
+                      {
+                        "key": "resource",
+                        "operator": "=",
+                        "value": "ping_droprate"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "F",
+                    "5m",
+                    "now"
+                  ]
+                },
+                "reducer": {
+                  "params": [],
+                  "type": "avg"
+                },
+                "type": "query"
+              },
+              {
+                "evaluator": {
+                  "params": [
+                    50
+                  ],
+                  "type": "gt"
+                },
+                "operator": {
+                  "type": "or"
+                },
+                "query": {
+                  "datasourceId": 1,
+                  "model": {
+                    "alias": "usopbw03",
+                    "dsType": "influxdb",
+                    "groupBy": [
+                      {
+                        "params": [
+                          "$interval"
+                        ],
+                        "type": "time"
+                      },
+                      {
+                        "params": [
+                          "previous"
+                        ],
+                        "type": "fill"
+                      }
+                    ],
+                    "measurement": "ping.usopbw03",
+                    "policy": "default",
+                    "refId": "G",
+                    "resultFormat": "time_series",
+                    "select": [
+                      [
+                        {
+                          "params": [
+                            "value"
+                          ],
+                          "type": "field"
+                        },
+                        {
+                          "params": [],
+                          "type": "last"
+                        },
+                        {
+                          "params": [
+                            " * 100"
+                          ],
+                          "type": "math"
+                        }
+                      ]
+                    ],
+                    "tags": [
+                      {
+                        "key": "resource",
+                        "operator": "=",
+                        "value": "ping_droprate"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "G",
+                    "5m",
+                    "now"
+                  ]
+                },
+                "reducer": {
+                  "params": [],
+                  "type": "avg"
+                },
+                "type": "query"
+              },
+              {
+                "evaluator": {
+                  "params": [
+                    50
+                  ],
+                  "type": "gt"
+                },
+                "operator": {
+                  "type": "or"
+                },
+                "query": {
+                  "datasourceId": 1,
+                  "model": {
+                    "alias": "usopbw03",
+                    "dsType": "influxdb",
+                    "groupBy": [
+                      {
+                        "params": [
+                          "$interval"
+                        ],
+                        "type": "time"
+                      },
+                      {
+                        "params": [
+                          "previous"
+                        ],
+                        "type": "fill"
+                      }
+                    ],
+                    "measurement": "ping.usopbw03",
+                    "policy": "default",
+                    "refId": "G",
+                    "resultFormat": "time_series",
+                    "select": [
+                      [
+                        {
+                          "params": [
+                            "value"
+                          ],
+                          "type": "field"
+                        },
+                        {
+                          "params": [],
+                          "type": "last"
+                        },
+                        {
+                          "params": [
+                            " * 100"
+                          ],
+                          "type": "math"
+                        }
+                      ]
+                    ],
+                    "tags": [
+                      {
+                        "key": "resource",
+                        "operator": "=",
+                        "value": "ping_droprate"
+                      }
+                    ]
+                  },
+                  "params": [
+                    "G",
+                    "5m",
+                    "now"
+                  ]
+                },
+                "reducer": {
+                  "params": [],
+                  "type": "avg"
+                },
+                "type": "query"
+              }
+            ],
+            "executionErrorState": "alerting",
+            "frequency": "300s",
+            "handler": 1,
+            "name": "ICMP packet loss from usopmon01 to uSOP boards alert",
+            "noDataState": "alerting",
+            "notifications": [
+              {
+                "id": 1
+              },
+              {
+                "id": 2
+              }
+            ]
+          },
+          "aliasColors": {},
+          "bars": false,
+          "datasource": null,
+          "fill": 1,
+          "id": 20,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": false,
+            "max": true,
+            "min": true,
+            "rightSide": true,
+            "show": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "usopfw01",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [
+                    "$interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "previous"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "ping.usopfw01",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "last"
+                  },
+                  {
+                    "params": [
+                      " * 100"
+                    ],
+                    "type": "math"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "resource",
+                  "operator": "=",
+                  "value": "ping_droprate"
+                }
+              ]
+            },
+            {
+              "alias": "usopfw02",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [
+                    "$interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "previous"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "ping.usopfw02",
+              "policy": "default",
+              "refId": "B",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "last"
+                  },
+                  {
+                    "params": [
+                      " * 100"
+                    ],
+                    "type": "math"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "resource",
+                  "operator": "=",
+                  "value": "ping_droprate"
+                }
+              ]
+            },
+            {
+              "alias": "usopfw03",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [
+                    "$interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "previous"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "ping.usopfw03",
+              "policy": "default",
+              "refId": "C",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "last"
+                  },
+                  {
+                    "params": [
+                      " * 100"
+                    ],
+                    "type": "math"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "resource",
+                  "operator": "=",
+                  "value": "ping_droprate"
+                }
+              ]
+            },
+            {
+              "alias": "usopfw04",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [
+                    "$interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "previous"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "ping.usopfw04",
+              "policy": "default",
+              "refId": "D",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "last"
+                  },
+                  {
+                    "params": [
+                      " * 100"
+                    ],
+                    "type": "math"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "resource",
+                  "operator": "=",
+                  "value": "ping_droprate"
+                }
+              ]
+            },
+            {
+              "alias": "usopbw01",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [
+                    "$interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "previous"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "ping.usopbw01",
+              "policy": "default",
+              "refId": "E",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "last"
+                  },
+                  {
+                    "params": [
+                      " * 100"
+                    ],
+                    "type": "math"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "resource",
+                  "operator": "=",
+                  "value": "ping_droprate"
+                }
+              ]
+            },
+            {
+              "alias": "usopbw02",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [
+                    "$interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "previous"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "ping.usopbw02",
+              "policy": "default",
+              "refId": "F",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "last"
+                  },
+                  {
+                    "params": [
+                      " * 100"
+                    ],
+                    "type": "math"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "resource",
+                  "operator": "=",
+                  "value": "ping_droprate"
+                }
+              ]
+            },
+            {
+              "alias": "usopbw03",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [
+                    "$interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "previous"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "ping.usopbw03",
+              "policy": "default",
+              "refId": "G",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "last"
+                  },
+                  {
+                    "params": [
+                      " * 100"
+                    ],
+                    "type": "math"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "resource",
+                  "operator": "=",
+                  "value": "ping_droprate"
+                }
+              ]
+            },
+            {
+              "alias": "usopbw04",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [
+                    "$interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "previous"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "ping.usopbw04",
+              "policy": "default",
+              "refId": "H",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "last"
+                  },
+                  {
+                    "params": [
+                      " * 100"
+                    ],
+                    "type": "math"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "resource",
+                  "operator": "=",
+                  "value": "ping_droprate"
+                }
+              ]
+            }
+          ],
+          "thresholds": [
+            {
+              "colorMode": "critical",
+              "fill": true,
+              "line": true,
+              "op": "gt",
+              "value": 50
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "ICMP packet loss from usopmon01 to uSOP boards",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "transparent": true,
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "percent",
+              "label": null,
+              "logBase": 1,
+              "max": "100",
+              "min": "0",
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Dashboard Row",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 104,
+      "panels": [
+        {
+          "content": "Internet Control Message Protocol (ICMP) defines a special packet which always triggers a reply from the node has received it. \nA response indicates that the target host is connected to the network, is reachable from the query agent, and \nis in a sufficiently functional state to access the network. Packet loss is evaluated every 4 minutes, after sending 30 ICMP packets\n(1 every 10s). The formula used is:\n\n        packet_loss = ((pkt_sent - pkt_recv) / pkt_sent) * 100\n\nAn alert is issued if packet_loss >= 50%\n",
+          "height": "50px",
+          "id": 31,
+          "links": [],
+          "mode": "markdown",
+          "span": 12,
+          "title": "",
+          "transparent": true,
+          "type": "text"
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Dashboard Row",
+      "titleSize": "h6"
+    }
+  ],
+  "schemaVersion": 14,
+  "style": "dark",
+  "tags": [
+    "rack"
+  ],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-24h",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
+  "timezone": "browser",
+  "title": "uSOP boards overview"
+}

@@ -1,0 +1,9 @@
+{
+  "config": {
+    "grafana": {
+      "url": "http://b2ecl.na.infn.it:7778",
+      "username": "admin",
+      "password": "changeme"
+    }
+  }
+}

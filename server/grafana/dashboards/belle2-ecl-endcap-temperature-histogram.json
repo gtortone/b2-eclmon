@@ -1,0 +1,768 @@
+{
+  "annotations": {
+    "list": []
+  },
+  "editable": false,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "hideControls": true,
+  "id": 11,
+  "links": [
+    {
+      "icon": "external link",
+      "tags": [
+        "ecl"
+      ],
+      "type": "dashboards"
+    }
+  ],
+  "refresh": "30s",
+  "rows": [
+    {
+      "collapse": false,
+      "height": "450px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "bucketMode": "size",
+          "bucketSize": "$binres",
+          "datasource": "ds_graphite",
+          "decimals": 2,
+          "editable": true,
+          "error": false,
+          "fill": 1,
+          "grid": {
+            "threshold1": null,
+            "threshold1Color": "rgba(216, 200, 27, 0.27)",
+            "threshold2": null,
+            "threshold2Color": "rgba(234, 112, 112, 0.22)"
+          },
+          "id": 1,
+          "legend": {
+            "alignAsTable": true,
+            "avg": false,
+            "current": true,
+            "hideEmpty": false,
+            "max": true,
+            "min": true,
+            "rightSide": true,
+            "show": true,
+            "sortDesc": false,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "maxValue": "$maxT",
+          "minValue": "$minT",
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "png",
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "$0.temperature - 1",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "/S$Fsector.temperature/",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "mean_value"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "resource",
+                  "operator": "=",
+                  "value": "1"
+                }
+              ]
+            },
+            {
+              "alias": "$0.temperature - 2",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "/S$Fsector.temperature/",
+              "policy": "default",
+              "refId": "B",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "mean_value"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "resource",
+                  "operator": "=",
+                  "value": "2"
+                }
+              ]
+            },
+            {
+              "alias": "$0.temperature - 3",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "/S$Fsector.temperature/",
+              "policy": "default",
+              "refId": "C",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "mean_value"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "resource",
+                  "operator": "=",
+                  "value": "3"
+                }
+              ]
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "ECL sectors - temperature histogram",
+          "tooltip": {
+            "msResolution": true,
+            "ordering": "alphabetical",
+            "shared": false,
+            "value_type": "cumulative"
+          },
+          "transparent": true,
+          "type": "mtanda-histogram-panel",
+          "xaxis": {
+            "show": true
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Row",
+      "titleSize": "h6"
+    }
+  ],
+  "schemaVersion": 14,
+  "style": "dark",
+  "tags": [
+    "ecl"
+  ],
+  "templating": {
+    "list": [
+      {
+        "allValue": null,
+        "current": {
+          "tags": [],
+          "text": "20",
+          "value": "20"
+        },
+        "datasource": null,
+        "hide": 0,
+        "includeAll": false,
+        "label": "min T",
+        "multi": false,
+        "name": "minT",
+        "options": [
+          {
+            "selected": true,
+            "text": "20",
+            "value": "20"
+          },
+          {
+            "selected": false,
+            "text": "21",
+            "value": "21"
+          },
+          {
+            "selected": false,
+            "text": "22",
+            "value": "22"
+          },
+          {
+            "selected": false,
+            "text": "23",
+            "value": "23"
+          },
+          {
+            "selected": false,
+            "text": "24",
+            "value": "24"
+          },
+          {
+            "selected": false,
+            "text": "25",
+            "value": "25"
+          },
+          {
+            "selected": false,
+            "text": "26",
+            "value": "26"
+          },
+          {
+            "selected": false,
+            "text": "27",
+            "value": "27"
+          },
+          {
+            "selected": false,
+            "text": "28",
+            "value": "28"
+          },
+          {
+            "selected": false,
+            "text": "29",
+            "value": "29"
+          },
+          {
+            "selected": false,
+            "text": "30",
+            "value": "30"
+          },
+          {
+            "selected": false,
+            "text": "31",
+            "value": "31"
+          },
+          {
+            "selected": false,
+            "text": "32",
+            "value": "32"
+          },
+          {
+            "selected": false,
+            "text": "33",
+            "value": "33"
+          },
+          {
+            "selected": false,
+            "text": "34",
+            "value": "34"
+          },
+          {
+            "selected": false,
+            "text": "35",
+            "value": "35"
+          },
+          {
+            "selected": false,
+            "text": "36",
+            "value": "36"
+          },
+          {
+            "selected": false,
+            "text": "37",
+            "value": "37"
+          },
+          {
+            "selected": false,
+            "text": "38",
+            "value": "38"
+          },
+          {
+            "selected": false,
+            "text": "39",
+            "value": "39"
+          },
+          {
+            "selected": false,
+            "text": "40",
+            "value": "40"
+          },
+          {
+            "selected": false,
+            "text": "41",
+            "value": "41"
+          },
+          {
+            "selected": false,
+            "text": "42",
+            "value": "42"
+          },
+          {
+            "selected": false,
+            "text": "43",
+            "value": "43"
+          },
+          {
+            "selected": false,
+            "text": "44",
+            "value": "44"
+          },
+          {
+            "selected": false,
+            "text": "45",
+            "value": "45"
+          }
+        ],
+        "query": "20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45",
+        "refresh": 0,
+        "type": "custom"
+      },
+      {
+        "allValue": null,
+        "current": {
+          "tags": [],
+          "text": "30",
+          "value": "30"
+        },
+        "datasource": null,
+        "hide": 0,
+        "includeAll": false,
+        "label": "max T",
+        "multi": false,
+        "name": "maxT",
+        "options": [
+          {
+            "selected": false,
+            "text": "20",
+            "value": "20"
+          },
+          {
+            "selected": false,
+            "text": "21",
+            "value": "21"
+          },
+          {
+            "selected": false,
+            "text": "22",
+            "value": "22"
+          },
+          {
+            "selected": false,
+            "text": "23",
+            "value": "23"
+          },
+          {
+            "selected": false,
+            "text": "24",
+            "value": "24"
+          },
+          {
+            "selected": false,
+            "text": "25",
+            "value": "25"
+          },
+          {
+            "selected": false,
+            "text": "26",
+            "value": "26"
+          },
+          {
+            "selected": false,
+            "text": "27",
+            "value": "27"
+          },
+          {
+            "selected": false,
+            "text": "28",
+            "value": "28"
+          },
+          {
+            "selected": false,
+            "text": "29",
+            "value": "29"
+          },
+          {
+            "selected": true,
+            "text": "30",
+            "value": "30"
+          },
+          {
+            "selected": false,
+            "text": "31",
+            "value": "31"
+          },
+          {
+            "selected": false,
+            "text": "32",
+            "value": "32"
+          },
+          {
+            "selected": false,
+            "text": "33",
+            "value": "33"
+          },
+          {
+            "selected": false,
+            "text": "34",
+            "value": "34"
+          },
+          {
+            "selected": false,
+            "text": "35",
+            "value": "35"
+          },
+          {
+            "selected": false,
+            "text": "36",
+            "value": "36"
+          },
+          {
+            "selected": false,
+            "text": "37",
+            "value": "37"
+          },
+          {
+            "selected": false,
+            "text": "38",
+            "value": "38"
+          },
+          {
+            "selected": false,
+            "text": "39",
+            "value": "39"
+          },
+          {
+            "selected": false,
+            "text": "40",
+            "value": "40"
+          },
+          {
+            "selected": false,
+            "text": "41",
+            "value": "41"
+          },
+          {
+            "selected": false,
+            "text": "42",
+            "value": "42"
+          },
+          {
+            "selected": false,
+            "text": "43",
+            "value": "43"
+          },
+          {
+            "selected": false,
+            "text": "44",
+            "value": "44"
+          },
+          {
+            "selected": false,
+            "text": "45",
+            "value": "45"
+          }
+        ],
+        "query": "20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45",
+        "refresh": 0,
+        "type": "custom"
+      },
+      {
+        "allValue": null,
+        "current": {
+          "tags": [],
+          "text": "1B + 2B + 3B",
+          "value": [
+            "1B",
+            "2B",
+            "3B"
+          ]
+        },
+        "datasource": null,
+        "hide": 0,
+        "includeAll": false,
+        "label": "BW sector",
+        "multi": true,
+        "name": "Bsector",
+        "options": [
+          {
+            "selected": true,
+            "text": "1B",
+            "value": "1B"
+          },
+          {
+            "selected": true,
+            "text": "2B",
+            "value": "2B"
+          },
+          {
+            "selected": true,
+            "text": "3B",
+            "value": "3B"
+          },
+          {
+            "selected": false,
+            "text": "4B",
+            "value": "4B"
+          },
+          {
+            "selected": false,
+            "text": "5B",
+            "value": "5B"
+          },
+          {
+            "selected": false,
+            "text": "6B",
+            "value": "6B"
+          },
+          {
+            "selected": false,
+            "text": "7B",
+            "value": "7B"
+          },
+          {
+            "selected": false,
+            "text": "8B",
+            "value": "8B"
+          },
+          {
+            "selected": false,
+            "text": "9B",
+            "value": "9B"
+          },
+          {
+            "selected": false,
+            "text": "10B",
+            "value": "10B"
+          },
+          {
+            "selected": false,
+            "text": "11B",
+            "value": "11B"
+          },
+          {
+            "selected": false,
+            "text": "12B",
+            "value": "12B"
+          },
+          {
+            "selected": false,
+            "text": "13B",
+            "value": "13B"
+          },
+          {
+            "selected": false,
+            "text": "14B",
+            "value": "14B"
+          },
+          {
+            "selected": false,
+            "text": "15B",
+            "value": "15B"
+          },
+          {
+            "selected": false,
+            "text": "16B",
+            "value": "16B"
+          }
+        ],
+        "query": "1B,2B,3B,4B,5B,6B,7B,8B,9B,10B,11B,12B,13B,14B,15B,16B",
+        "refresh": 0,
+        "type": "custom"
+      },
+      {
+        "allValue": null,
+        "current": {
+          "text": "1F + 2F + 3F",
+          "value": [
+            "1F",
+            "2F",
+            "3F"
+          ]
+        },
+        "datasource": null,
+        "hide": 0,
+        "includeAll": false,
+        "label": "FW sector",
+        "multi": true,
+        "name": "Fsector",
+        "options": [
+          {
+            "selected": true,
+            "text": "1F",
+            "value": "1F"
+          },
+          {
+            "selected": true,
+            "text": "2F",
+            "value": "2F"
+          },
+          {
+            "selected": true,
+            "text": "3F",
+            "value": "3F"
+          },
+          {
+            "selected": false,
+            "text": "4F",
+            "value": "4F"
+          },
+          {
+            "selected": false,
+            "text": "5F",
+            "value": "5F"
+          },
+          {
+            "selected": false,
+            "text": "6F",
+            "value": "6F"
+          },
+          {
+            "selected": false,
+            "text": "7F",
+            "value": "7F"
+          },
+          {
+            "selected": false,
+            "text": "8F",
+            "value": "8F"
+          },
+          {
+            "selected": false,
+            "text": "9F",
+            "value": "9F"
+          },
+          {
+            "selected": false,
+            "text": "10F",
+            "value": "10F"
+          },
+          {
+            "selected": false,
+            "text": "11F",
+            "value": "11F"
+          },
+          {
+            "selected": false,
+            "text": "12F",
+            "value": "12F"
+          },
+          {
+            "selected": false,
+            "text": "13F",
+            "value": "13F"
+          },
+          {
+            "selected": false,
+            "text": "14F",
+            "value": "14F"
+          },
+          {
+            "selected": false,
+            "text": "15F",
+            "value": "15F"
+          },
+          {
+            "selected": false,
+            "text": "16F",
+            "value": "16F"
+          }
+        ],
+        "query": "1F,2F,3F,4F,5F,6F,7F,8F,9F,10F,11F,12F,13F,14F,15F,16F",
+        "refresh": 0,
+        "type": "custom"
+      },
+      {
+        "allValue": null,
+        "current": {
+          "tags": [],
+          "text": "0.01",
+          "value": "0.01"
+        },
+        "datasource": null,
+        "hide": 0,
+        "includeAll": false,
+        "label": "bin resolution",
+        "multi": false,
+        "name": "binres",
+        "options": [
+          {
+            "selected": false,
+            "text": "0.5",
+            "value": "0.5"
+          },
+          {
+            "selected": false,
+            "text": "0.1",
+            "value": "0.1"
+          },
+          {
+            "selected": true,
+            "text": "0.01",
+            "value": "0.01"
+          }
+        ],
+        "query": "0.5, 0.1, 0.01",
+        "refresh": 0,
+        "type": "custom"
+      }
+    ]
+  },
+  "time": {
+    "from": "now-7d",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
+  "timezone": "browser",
+  "title": "Belle2 ECL Endcap - temperature histogram"
+}

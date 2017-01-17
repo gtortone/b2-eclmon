@@ -1,0 +1,633 @@
+{
+  "annotations": {
+    "list": []
+  },
+  "editable": false,
+  "gnetId": null,
+  "graphTooltip": 1,
+  "hideControls": true,
+  "id": 5,
+  "links": [
+    {
+      "asDropdown": false,
+      "icon": "external link",
+      "keepTime": false,
+      "tags": [
+        "ecl"
+      ],
+      "type": "dashboards"
+    }
+  ],
+  "refresh": "10s",
+  "rows": [
+    {
+      "collapse": false,
+      "height": "25px",
+      "panels": [
+        {
+          "content": "<h1><b><center>uSOP for ECL Endcap - Forward</center></b></h1>",
+          "editable": true,
+          "error": false,
+          "height": "50px",
+          "id": 4,
+          "links": [],
+          "mode": "html",
+          "span": 12,
+          "title": "",
+          "transparent": true,
+          "type": "text"
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "New row",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": "350px",
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "influxdb",
+          "decimals": 2,
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {},
+          "height": "350px",
+          "id": 2,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "rightSide": true,
+            "show": true,
+            "sortDesc": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 1,
+          "points": true,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "$0.temp - 1",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [
+                    "$interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "null"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "/S$sector.temperature/",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "resource",
+                  "operator": "=",
+                  "value": "1"
+                }
+              ]
+            },
+            {
+              "alias": "$0.temp - 2",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [
+                    "$interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "null"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "/S$sector.temperature/",
+              "policy": "default",
+              "refId": "B",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "resource",
+                  "operator": "=",
+                  "value": "2"
+                }
+              ]
+            },
+            {
+              "alias": "$0.temp - 3",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [
+                    "$interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "null"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "/S$sector.temperature/",
+              "policy": "default",
+              "refId": "C",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "resource",
+                  "operator": "=",
+                  "value": "3"
+                }
+              ]
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "temperature monitor",
+          "tooltip": {
+            "msResolution": true,
+            "shared": false,
+            "sort": 0,
+            "value_type": "cumulative"
+          },
+          "transparent": true,
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "celsius",
+              "label": "temperature",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "percent",
+              "label": "",
+              "logBase": 1,
+              "max": 100,
+              "min": null,
+              "show": false
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "influxdb",
+          "decimals": 1,
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {},
+          "height": "350px",
+          "id": 3,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "rightSide": true,
+            "show": true,
+            "sortDesc": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 1,
+          "points": true,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "$0.hum",
+              "dsType": "influxdb",
+              "groupBy": [
+                {
+                  "params": [
+                    "$interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "null"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "/S$sectorh.humidity/",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "median"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "resource",
+                  "operator": "=",
+                  "value": "1"
+                }
+              ]
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "relative humidity monitor",
+          "tooltip": {
+            "msResolution": true,
+            "shared": false,
+            "sort": 0,
+            "value_type": "cumulative"
+          },
+          "transparent": true,
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "percent",
+              "label": "humidity",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "percent",
+              "label": "",
+              "logBase": 1,
+              "max": 100,
+              "min": null,
+              "show": false
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Row",
+      "titleSize": "h6"
+    }
+  ],
+  "schemaVersion": 14,
+  "style": "dark",
+  "tags": [
+    "ecl"
+  ],
+  "templating": {
+    "list": [
+      {
+        "allValue": "",
+        "current": {
+          "tags": [],
+          "text": "1F",
+          "value": [
+            "1F"
+          ]
+        },
+        "datasource": null,
+        "hide": 0,
+        "includeAll": true,
+        "label": "T of sectors",
+        "multi": true,
+        "name": "sector",
+        "options": [
+          {
+            "selected": false,
+            "text": "All",
+            "value": "$__all"
+          },
+          {
+            "selected": true,
+            "text": "1F",
+            "value": "1F"
+          },
+          {
+            "selected": false,
+            "text": "2F",
+            "value": "2F"
+          },
+          {
+            "selected": false,
+            "text": "3F",
+            "value": "3F"
+          },
+          {
+            "selected": false,
+            "text": "4F",
+            "value": "4F"
+          },
+          {
+            "selected": false,
+            "text": "5F",
+            "value": "5F"
+          },
+          {
+            "selected": false,
+            "text": "6F",
+            "value": "6F"
+          },
+          {
+            "selected": false,
+            "text": "7F",
+            "value": "7F"
+          },
+          {
+            "selected": false,
+            "text": "8F",
+            "value": "8F"
+          },
+          {
+            "selected": false,
+            "text": "9F",
+            "value": "9F"
+          },
+          {
+            "selected": false,
+            "text": "10F",
+            "value": "10F"
+          },
+          {
+            "selected": false,
+            "text": "11F",
+            "value": "11F"
+          },
+          {
+            "selected": false,
+            "text": "12F",
+            "value": "12F"
+          },
+          {
+            "selected": false,
+            "text": "13F",
+            "value": "13F"
+          },
+          {
+            "selected": false,
+            "text": "14F",
+            "value": "14F"
+          },
+          {
+            "selected": false,
+            "text": "15F",
+            "value": "15F"
+          },
+          {
+            "selected": false,
+            "text": "16F",
+            "value": "16F"
+          }
+        ],
+        "query": "1F,2F,3F,4F,5F,6F,7F,8F,9F,10F,11F,12F,13F,14F,15F,16F",
+        "refresh": 0,
+        "type": "custom"
+      },
+      {
+        "allValue": "",
+        "current": {
+          "tags": [],
+          "text": "1F",
+          "value": [
+            "1F"
+          ]
+        },
+        "datasource": null,
+        "hide": 0,
+        "includeAll": true,
+        "label": "Rh of sector",
+        "multi": true,
+        "name": "sectorh",
+        "options": [
+          {
+            "selected": false,
+            "text": "All",
+            "value": "$__all"
+          },
+          {
+            "selected": true,
+            "text": "1F",
+            "value": "1F"
+          },
+          {
+            "selected": false,
+            "text": "2F",
+            "value": "2F"
+          },
+          {
+            "selected": false,
+            "text": "3F",
+            "value": "3F"
+          },
+          {
+            "selected": false,
+            "text": "4F",
+            "value": "4F"
+          },
+          {
+            "selected": false,
+            "text": "5F",
+            "value": "5F"
+          },
+          {
+            "selected": false,
+            "text": "6F",
+            "value": "6F"
+          },
+          {
+            "selected": false,
+            "text": "7F",
+            "value": "7F"
+          },
+          {
+            "selected": false,
+            "text": "8F",
+            "value": "8F"
+          },
+          {
+            "selected": false,
+            "text": "9F",
+            "value": "9F"
+          },
+          {
+            "selected": false,
+            "text": "10F",
+            "value": "10F"
+          },
+          {
+            "selected": false,
+            "text": "11F",
+            "value": "11F"
+          },
+          {
+            "selected": false,
+            "text": "12F",
+            "value": "12F"
+          },
+          {
+            "selected": false,
+            "text": "13F",
+            "value": "13F"
+          },
+          {
+            "selected": false,
+            "text": "14F",
+            "value": "14F"
+          },
+          {
+            "selected": false,
+            "text": "15F",
+            "value": "15F"
+          },
+          {
+            "selected": false,
+            "text": "16F",
+            "value": "16F"
+          }
+        ],
+        "query": "1F,2F,3F,4F,5F,6F,7F,8F,9F,10F,11F,12F,13F,14F,15F,16F",
+        "refresh": 0,
+        "type": "custom"
+      }
+    ]
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
+  "timezone": "browser",
+  "title": "Belle2 ECL Endcap monitoring - forward"
+}
