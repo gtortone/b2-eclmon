@@ -9,10 +9,12 @@
   "id": 12,
   "links": [
     {
+      "asDropdown": true,
       "icon": "external link",
       "tags": [
         "ecl"
       ],
+      "title": "ECL dashboards",
       "type": "dashboards"
     }
   ],
