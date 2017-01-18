@@ -71,7 +71,7 @@
               "alias": "$0.rel.humidity - 1",
               "dsType": "influxdb",
               "groupBy": [],
-              "measurement": "/S$Fsector.temperature/",
+              "measurement": "/S$Fsector.humidity/",
               "policy": "default",
               "refId": "A",
               "resultFormat": "time_series",
@@ -97,7 +97,7 @@
               "alias": "$0.rel.humidity - 2",
               "dsType": "influxdb",
               "groupBy": [],
-              "measurement": "/S$Fsector.temperature/",
+              "measurement": "/S$Fsector.humidity/",
               "policy": "default",
               "refId": "B",
               "resultFormat": "time_series",
@@ -123,7 +123,7 @@
               "alias": "$0.rel.humidity - 3",
               "dsType": "influxdb",
               "groupBy": [],
-              "measurement": "/S$Fsector.temperature/",
+              "measurement": "/S$Fsector.humidity/",
               "policy": "default",
               "refId": "C",
               "resultFormat": "time_series",
@@ -198,9 +198,9 @@
       {
         "allValue": null,
         "current": {
-          "tags": [],
-          "text": "10",
-          "value": "10"
+          "selected": true,
+          "text": "0",
+          "value": "0"
         },
         "hide": 0,
         "includeAll": false,
@@ -209,12 +209,12 @@
         "name": "minRH",
         "options": [
           {
-            "selected": false,
+            "selected": true,
             "text": "0",
             "value": "0"
           },
           {
-            "selected": true,
+            "selected": false,
             "text": "10",
             "value": "10"
           },
@@ -265,9 +265,9 @@
       {
         "allValue": null,
         "current": {
-          "tags": [],
-          "text": "80",
-          "value": "80"
+          "selected": true,
+          "text": "20",
+          "value": "20"
         },
         "datasource": null,
         "hide": 0,
@@ -287,7 +287,7 @@
             "value": "10"
           },
           {
-            "selected": false,
+            "selected": true,
             "text": "20",
             "value": "20"
           },
@@ -317,7 +317,7 @@
             "value": "70"
           },
           {
-            "selected": true,
+            "selected": false,
             "text": "80",
             "value": "80"
           },
@@ -538,7 +538,7 @@
       {
         "allValue": null,
         "current": {
-          "tags": [],
+          "selected": true,
           "text": "0.1",
           "value": "0.1"
         },
