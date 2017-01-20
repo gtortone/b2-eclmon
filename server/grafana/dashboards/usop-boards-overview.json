@@ -2412,7 +2412,7 @@
       "height": 104,
       "panels": [
         {
-          "content": "Internet Control Message Protocol (ICMP) defines a special packet which always triggers a reply from the node has received it. \nA response indicates that the target host is connected to the network, is reachable from the query agent, and \nis in a sufficiently functional state to access the network. Packet loss is evaluated every 4 minutes, after sending 30 ICMP packets\n(1 every 10s). The formula used is:\n\n        packet_loss = ((pkt_sent - pkt_recv) / pkt_sent) * 100\n\nAn alert is issued if packet_loss >= 50%\n",
+          "content": "Internet Control Message Protocol (ICMP) defines a special packet which always triggers a reply from the node has received it. \nA response indicates that the target host is connected to the network, is reachable from the query agent, and \nis in a sufficiently functional state to access the network. Packet loss is evaluated every 5 minutes, after sending 30 ICMP packets\n(1 every 10s). The formula used is:\n\n        packet_loss = ((pkt_sent - pkt_recv) / pkt_sent) * 100\n\nAn alert is issued if packet_loss >= 50%\n",
           "height": "50px",
           "id": 31,
           "links": [],
