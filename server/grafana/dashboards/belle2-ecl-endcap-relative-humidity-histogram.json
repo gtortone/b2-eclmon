@@ -73,7 +73,7 @@
               "alias": "$0.rel.humidity - 1",
               "dsType": "influxdb",
               "groupBy": [],
-              "measurement": "/S$Fsector.humidity/",
+              "measurement": "/^S$Fsector.humidity/",
               "policy": "default",
               "refId": "A",
               "resultFormat": "time_series",
@@ -99,7 +99,7 @@
               "alias": "$0.rel.humidity - 2",
               "dsType": "influxdb",
               "groupBy": [],
-              "measurement": "/S$Fsector.humidity/",
+              "measurement": "/^S$Fsector.humidity/",
               "policy": "default",
               "refId": "B",
               "resultFormat": "time_series",
@@ -125,9 +125,87 @@
               "alias": "$0.rel.humidity - 3",
               "dsType": "influxdb",
               "groupBy": [],
-              "measurement": "/S$Fsector.humidity/",
+              "measurement": "/^S$Fsector.humidity/",
               "policy": "default",
               "refId": "C",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "mean_value"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "resource",
+                  "operator": "=",
+                  "value": "3"
+                }
+              ]
+            },
+            {
+              "alias": "$0.rel.humidity - 1",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "/^S$Bsector.humidity/",
+              "policy": "default",
+              "refId": "D",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "mean_value"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "resource",
+                  "operator": "=",
+                  "value": "1"
+                }
+              ]
+            },
+            {
+              "alias": "$0.rel.humidity - 2",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "/^S$Bsector.humidity/",
+              "policy": "default",
+              "refId": "E",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "mean_value"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "resource",
+                  "operator": "=",
+                  "value": "2"
+                }
+              ]
+            },
+            {
+              "alias": "$0.rel.humidity - 3",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "/^S$Bsector.humidity/",
+              "policy": "default",
+              "refId": "F",
               "resultFormat": "time_series",
               "select": [
                 [
@@ -438,6 +516,7 @@
       {
         "allValue": null,
         "current": {
+          "tags": [],
           "text": "1F + 2F + 3F",
           "value": [
             "1F",

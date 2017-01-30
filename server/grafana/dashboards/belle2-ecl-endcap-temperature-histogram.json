@@ -20,7 +20,7 @@
       "type": "dashboards"
     }
   ],
-  "refresh": "30s",
+  "refresh": "10s",
   "rows": [
     {
       "collapse": false,
@@ -75,7 +75,7 @@
               "alias": "$0.temperature - 1",
               "dsType": "influxdb",
               "groupBy": [],
-              "measurement": "/S$Fsector.temperature/",
+              "measurement": "/^S$Fsector.temperature/",
               "policy": "default",
               "refId": "A",
               "resultFormat": "time_series",
@@ -101,7 +101,7 @@
               "alias": "$0.temperature - 2",
               "dsType": "influxdb",
               "groupBy": [],
-              "measurement": "/S$Fsector.temperature/",
+              "measurement": "/^S$Fsector.temperature/",
               "policy": "default",
               "refId": "B",
               "resultFormat": "time_series",
@@ -127,9 +127,87 @@
               "alias": "$0.temperature - 3",
               "dsType": "influxdb",
               "groupBy": [],
-              "measurement": "/S$Fsector.temperature/",
+              "measurement": "/^S$Fsector.temperature/",
               "policy": "default",
               "refId": "C",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "mean_value"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "resource",
+                  "operator": "=",
+                  "value": "3"
+                }
+              ]
+            },
+            {
+              "alias": "$0.temperature - 1",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "/^S$Bsector.temperature/",
+              "policy": "default",
+              "refId": "D",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "mean_value"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "resource",
+                  "operator": "=",
+                  "value": "1"
+                }
+              ]
+            },
+            {
+              "alias": "$0.temperature - 2",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "/^S$Bsector.temperature/",
+              "policy": "default",
+              "refId": "E",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "mean_value"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "resource",
+                  "operator": "=",
+                  "value": "2"
+                }
+              ]
+            },
+            {
+              "alias": "$0.temperature - 3",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "/^S$Bsector.temperature/",
+              "policy": "default",
+              "refId": "F",
               "resultFormat": "time_series",
               "select": [
                 [
@@ -202,7 +280,7 @@
       {
         "allValue": null,
         "current": {
-          "tags": [],
+          "selected": true,
           "text": "20",
           "value": "20"
         },
@@ -351,7 +429,7 @@
       {
         "allValue": null,
         "current": {
-          "tags": [],
+          "selected": true,
           "text": "30",
           "value": "30"
         },
@@ -603,6 +681,7 @@
       {
         "allValue": null,
         "current": {
+          "tags": [],
           "text": "1F + 2F + 3F",
           "value": [
             "1F",
@@ -705,7 +784,7 @@
       {
         "allValue": null,
         "current": {
-          "tags": [],
+          "selected": true,
           "text": "0.01",
           "value": "0.01"
         },

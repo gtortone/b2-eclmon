@@ -103,7 +103,7 @@
                   "type": "fill"
                 }
               ],
-              "measurement": "/S$sector.temperature/",
+              "measurement": "/^S$sector.temperature/",
               "policy": "default",
               "refId": "A",
               "resultFormat": "time_series",
@@ -146,7 +146,7 @@
                   "type": "fill"
                 }
               ],
-              "measurement": "/S$sector.temperature/",
+              "measurement": "/^S$sector.temperature/",
               "policy": "default",
               "refId": "B",
               "resultFormat": "time_series",
@@ -189,7 +189,7 @@
                   "type": "fill"
                 }
               ],
-              "measurement": "/S$sector.temperature/",
+              "measurement": "/^S$sector.temperature/",
               "policy": "default",
               "refId": "C",
               "resultFormat": "time_series",
@@ -306,7 +306,7 @@
                   "type": "fill"
                 }
               ],
-              "measurement": "/S$sectorh.humidity/",
+              "measurement": "/^S$sectorh.humidity/",
               "policy": "default",
               "refId": "A",
               "resultFormat": "time_series",
@@ -390,9 +390,11 @@
         "allValue": "",
         "current": {
           "tags": [],
-          "text": "1F",
+          "text": "1F + 2F + 3F",
           "value": [
-            "1F"
+            "1F",
+            "2F",
+            "3F"
           ]
         },
         "datasource": null,
@@ -413,12 +415,12 @@
             "value": "1F"
           },
           {
-            "selected": false,
+            "selected": true,
             "text": "2F",
             "value": "2F"
           },
           {
-            "selected": false,
+            "selected": true,
             "text": "3F",
             "value": "3F"
           },
@@ -496,9 +498,11 @@
         "allValue": "",
         "current": {
           "tags": [],
-          "text": "1F",
+          "text": "1F + 2F + 3F",
           "value": [
-            "1F"
+            "1F",
+            "2F",
+            "3F"
           ]
         },
         "datasource": null,
@@ -519,12 +523,12 @@
             "value": "1F"
           },
           {
-            "selected": false,
+            "selected": true,
             "text": "2F",
             "value": "2F"
           },
           {
-            "selected": false,
+            "selected": true,
             "text": "3F",
             "value": "3F"
           },

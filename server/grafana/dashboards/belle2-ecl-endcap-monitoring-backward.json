@@ -102,7 +102,7 @@
                   "type": "fill"
                 }
               ],
-              "measurement": "/S$sector.temperature/",
+              "measurement": "/^S$sector.temperature/",
               "policy": "default",
               "refId": "A",
               "resultFormat": "time_series",
@@ -145,7 +145,7 @@
                   "type": "fill"
                 }
               ],
-              "measurement": "/S$sector.temperature/",
+              "measurement": "/^S$sector.temperature/",
               "policy": "default",
               "refId": "B",
               "resultFormat": "time_series",
@@ -188,7 +188,7 @@
                   "type": "fill"
                 }
               ],
-              "measurement": "/S$sector.temperature/",
+              "measurement": "/^S$sector.temperature/",
               "policy": "default",
               "refId": "C",
               "resultFormat": "time_series",
@@ -305,7 +305,7 @@
                   "type": "fill"
                 }
               ],
-              "measurement": "/S$sectorh.humidity/",
+              "measurement": "/^S$sectorh.humidity/",
               "policy": "default",
               "refId": "A",
               "resultFormat": "time_series",
@@ -389,9 +389,11 @@
         "allValue": "",
         "current": {
           "tags": [],
-          "text": "1B",
+          "text": "1B + 2B + 3B",
           "value": [
-            "1B"
+            "1B",
+            "2B",
+            "3B"
           ]
         },
         "datasource": null,
@@ -412,12 +414,12 @@
             "value": "1B"
           },
           {
-            "selected": false,
+            "selected": true,
             "text": "2B",
             "value": "2B"
           },
           {
-            "selected": false,
+            "selected": true,
             "text": "3B",
             "value": "3B"
           },
@@ -495,9 +497,11 @@
         "allValue": "",
         "current": {
           "tags": [],
-          "text": "1B",
+          "text": "1B + 2B + 3B",
           "value": [
-            "1B"
+            "1B",
+            "2B",
+            "3B"
           ]
         },
         "datasource": null,
@@ -518,12 +522,12 @@
             "value": "1B"
           },
           {
-            "selected": false,
+            "selected": true,
             "text": "2B",
             "value": "2B"
           },
           {
-            "selected": false,
+            "selected": true,
             "text": "3B",
             "value": "3B"
           },
