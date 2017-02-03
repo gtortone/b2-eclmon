@@ -415,39 +415,6 @@
       {
         "allValue": null,
         "current": {
-          "selected": false,
-          "tags": [],
-          "text": "9B + 10B",
-          "value": [
-            "9B",
-            "10B"
-          ]
-        },
-        "datasource": null,
-        "hide": 0,
-        "includeAll": false,
-        "label": "BW sector",
-        "multi": true,
-        "name": "Bsector",
-        "options": [
-          {
-            "selected": true,
-            "text": "9B",
-            "value": "9B"
-          },
-          {
-            "selected": true,
-            "text": "10B",
-            "value": "10B"
-          }
-        ],
-        "query": "9B,10B",
-        "refresh": 0,
-        "type": "custom"
-      },
-      {
-        "allValue": null,
-        "current": {
           "tags": [],
           "text": "7F + 8F",
           "value": [

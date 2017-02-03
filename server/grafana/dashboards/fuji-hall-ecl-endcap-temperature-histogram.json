@@ -20,7 +20,7 @@
       "type": "dashboards"
     }
   ],
-  "refresh": "10s",
+  "refresh": "30s",
   "rows": [
     {
       "collapse": false,
@@ -579,46 +579,11 @@
       {
         "allValue": null,
         "current": {
-          "text": "9B + 10B",
-          "value": [
-            "9B",
-            "10B"
-          ]
-        },
-        "datasource": null,
-        "hide": 0,
-        "includeAll": false,
-        "label": "BW sector",
-        "multi": true,
-        "name": "Bsector",
-        "options": [
-          {
-            "selected": false,
-            "text": "none",
-            "value": "none"
-          },
-          {
-            "selected": true,
-            "text": "9B",
-            "value": "9B"
-          },
-          {
-            "selected": true,
-            "text": "10B",
-            "value": "10B"
-          }
-        ],
-        "query": "none,9B,10B",
-        "refresh": 0,
-        "type": "custom"
-      },
-      {
-        "allValue": null,
-        "current": {
           "tags": [],
-          "text": "none",
+          "text": "7F + 8F",
           "value": [
-            "none"
+            "7F",
+            "8F"
           ]
         },
         "datasource": null,
@@ -629,17 +594,17 @@
         "name": "Fsector",
         "options": [
           {
-            "selected": true,
+            "selected": false,
             "text": "none",
             "value": "none"
           },
           {
-            "selected": false,
+            "selected": true,
             "text": "7F",
             "value": "7F"
           },
           {
-            "selected": false,
+            "selected": true,
             "text": "8F",
             "value": "8F"
           }
