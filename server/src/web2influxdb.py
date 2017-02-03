@@ -81,12 +81,13 @@ class PutHandler(tornado.web.RequestHandler):
 	    superstring = s.translate(t)
 
 	    for i, value in enumerate(d['values']):
-		metric = "collectd." + host + "." + superstring
-		if len(d['values']) > 1:
-		    metric = metric + "." + d['dsnames'][i]
-		line = "{0} {1} {2}".format(metric, value, gtime)
-		line = line + "\n"
-		lines.append(line)
+                if value != -999:
+		   metric = "collectd." + host + "." + superstring
+         	   if len(d['values']) > 1:
+		      metric = metric + "." + d['dsnames'][i]
+		   line = "{0} {1} {2}".format(metric, value, gtime)
+		   line = line + "\n"
+		   lines.append(line)
 
 	if len(lines) > 0:
 	    lines.append('')
