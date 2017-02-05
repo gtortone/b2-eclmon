@@ -2,7 +2,7 @@
   "annotations": {
     "list": []
   },
-  "editable": false,
+  "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
   "hideControls": true,
@@ -29,7 +29,7 @@
           "bars": false,
           "bucketMode": "size",
           "bucketSize": "$binres",
-          "datasource": "ds_graphite",
+          "datasource": "ds_graphite_15m",
           "decimals": 2,
           "editable": true,
           "error": false,
@@ -228,7 +228,7 @@
           ],
           "timeFrom": null,
           "timeShift": null,
-          "title": "ECL sectors - relative humidity histogram",
+          "title": "ECL sectors - relative humidity histogram - forward",
           "tooltip": {
             "msResolution": true,
             "ordering": "alphabetical",
@@ -416,26 +416,30 @@
         "allValue": null,
         "current": {
           "tags": [],
-          "text": "7F + 8F",
+          "text": "All",
           "value": [
-            "7F",
-            "8F"
+            "$__all"
           ]
         },
         "datasource": null,
         "hide": 0,
-        "includeAll": false,
+        "includeAll": true,
         "label": "FW sector",
         "multi": true,
         "name": "Fsector",
         "options": [
           {
             "selected": true,
+            "text": "All",
+            "value": "$__all"
+          },
+          {
+            "selected": false,
             "text": "7F",
             "value": "7F"
           },
           {
-            "selected": true,
+            "selected": false,
             "text": "8F",
             "value": "8F"
           }

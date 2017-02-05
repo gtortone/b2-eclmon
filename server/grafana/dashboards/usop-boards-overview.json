@@ -2,7 +2,7 @@
   "annotations": {
     "list": []
   },
-  "editable": false,
+  "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
   "hideControls": true,
@@ -863,7 +863,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "ds_graphite_15m",
           "fill": 1,
           "id": 3,
           "legend": {
@@ -893,20 +893,7 @@
             {
               "alias": "usopfw01",
               "dsType": "influxdb",
-              "groupBy": [
-                {
-                  "params": [
-                    "$interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "previous"
-                  ],
-                  "type": "fill"
-                }
-              ],
+              "groupBy": [],
               "measurement": "ping.usopfw01",
               "policy": "default",
               "refId": "A",
@@ -915,13 +902,9 @@
                 [
                   {
                     "params": [
-                      "value"
+                      "mean_value"
                     ],
                     "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "mean"
                   }
                 ]
               ],
@@ -942,20 +925,7 @@
             {
               "alias": "usopfw02",
               "dsType": "influxdb",
-              "groupBy": [
-                {
-                  "params": [
-                    "$interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "previous"
-                  ],
-                  "type": "fill"
-                }
-              ],
+              "groupBy": [],
               "measurement": "ping.usopfw02",
               "policy": "default",
               "refId": "B",
@@ -964,13 +934,9 @@
                 [
                   {
                     "params": [
-                      "value"
+                      "mean_value"
                     ],
                     "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "mean"
                   }
                 ]
               ],
@@ -991,20 +957,7 @@
             {
               "alias": "usopfw03",
               "dsType": "influxdb",
-              "groupBy": [
-                {
-                  "params": [
-                    "$interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "previous"
-                  ],
-                  "type": "fill"
-                }
-              ],
+              "groupBy": [],
               "measurement": "ping.usopfw03",
               "policy": "default",
               "refId": "C",
@@ -1013,13 +966,9 @@
                 [
                   {
                     "params": [
-                      "value"
+                      "mean_value"
                     ],
                     "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "mean"
                   }
                 ]
               ],
@@ -1040,20 +989,7 @@
             {
               "alias": "usopfw04",
               "dsType": "influxdb",
-              "groupBy": [
-                {
-                  "params": [
-                    "$interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "previous"
-                  ],
-                  "type": "fill"
-                }
-              ],
+              "groupBy": [],
               "measurement": "ping.usopfw04",
               "policy": "default",
               "refId": "D",
@@ -1062,13 +998,9 @@
                 [
                   {
                     "params": [
-                      "value"
+                      "mean_value"
                     ],
                     "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "mean"
                   }
                 ]
               ],
@@ -1089,20 +1021,7 @@
             {
               "alias": "usopbw01",
               "dsType": "influxdb",
-              "groupBy": [
-                {
-                  "params": [
-                    "$interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "previous"
-                  ],
-                  "type": "fill"
-                }
-              ],
+              "groupBy": [],
               "measurement": "ping.usopbw01",
               "policy": "default",
               "refId": "E",
@@ -1111,13 +1030,9 @@
                 [
                   {
                     "params": [
-                      "value"
+                      "mean_value"
                     ],
                     "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "mean"
                   }
                 ]
               ],
@@ -1138,20 +1053,7 @@
             {
               "alias": "usopbw02",
               "dsType": "influxdb",
-              "groupBy": [
-                {
-                  "params": [
-                    "$interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "previous"
-                  ],
-                  "type": "fill"
-                }
-              ],
+              "groupBy": [],
               "measurement": "ping.usopbw02",
               "policy": "default",
               "refId": "F",
@@ -1160,13 +1062,9 @@
                 [
                   {
                     "params": [
-                      "value"
+                      "mean_value"
                     ],
                     "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "mean"
                   }
                 ]
               ],
@@ -1187,20 +1085,7 @@
             {
               "alias": "usopbw03",
               "dsType": "influxdb",
-              "groupBy": [
-                {
-                  "params": [
-                    "$interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "previous"
-                  ],
-                  "type": "fill"
-                }
-              ],
+              "groupBy": [],
               "measurement": "ping.usopbw03",
               "policy": "default",
               "refId": "G",
@@ -1209,13 +1094,9 @@
                 [
                   {
                     "params": [
-                      "value"
+                      "mean_value"
                     ],
                     "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "mean"
                   }
                 ]
               ],
@@ -1236,20 +1117,7 @@
             {
               "alias": "usopbw04",
               "dsType": "influxdb",
-              "groupBy": [
-                {
-                  "params": [
-                    "$interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "previous"
-                  ],
-                  "type": "fill"
-                }
-              ],
+              "groupBy": [],
               "measurement": "ping.usopbw04",
               "policy": "default",
               "refId": "H",
@@ -1258,13 +1126,9 @@
                 [
                   {
                     "params": [
-                      "value"
+                      "mean_value"
                     ],
                     "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "mean"
                   }
                 ]
               ],
@@ -1349,20 +1213,7 @@
                   "model": {
                     "alias": "usopfw01",
                     "dsType": "influxdb",
-                    "groupBy": [
-                      {
-                        "params": [
-                          "$interval"
-                        ],
-                        "type": "time"
-                      },
-                      {
-                        "params": [
-                          "previous"
-                        ],
-                        "type": "fill"
-                      }
-                    ],
+                    "groupBy": [],
                     "measurement": "ping.usopfw01",
                     "policy": "default",
                     "refId": "A",
@@ -1374,10 +1225,6 @@
                             "value"
                           ],
                           "type": "field"
-                        },
-                        {
-                          "params": [],
-                          "type": "last"
                         },
                         {
                           "params": [
@@ -1422,20 +1269,7 @@
                   "model": {
                     "alias": "usopfw02",
                     "dsType": "influxdb",
-                    "groupBy": [
-                      {
-                        "params": [
-                          "$interval"
-                        ],
-                        "type": "time"
-                      },
-                      {
-                        "params": [
-                          "previous"
-                        ],
-                        "type": "fill"
-                      }
-                    ],
+                    "groupBy": [],
                     "measurement": "ping.usopfw02",
                     "policy": "default",
                     "refId": "B",
@@ -1447,10 +1281,6 @@
                             "value"
                           ],
                           "type": "field"
-                        },
-                        {
-                          "params": [],
-                          "type": "last"
                         },
                         {
                           "params": [
@@ -1495,20 +1325,7 @@
                   "model": {
                     "alias": "usopfw03",
                     "dsType": "influxdb",
-                    "groupBy": [
-                      {
-                        "params": [
-                          "$interval"
-                        ],
-                        "type": "time"
-                      },
-                      {
-                        "params": [
-                          "previous"
-                        ],
-                        "type": "fill"
-                      }
-                    ],
+                    "groupBy": [],
                     "measurement": "ping.usopfw03",
                     "policy": "default",
                     "refId": "C",
@@ -1520,10 +1337,6 @@
                             "value"
                           ],
                           "type": "field"
-                        },
-                        {
-                          "params": [],
-                          "type": "last"
                         },
                         {
                           "params": [
@@ -1568,20 +1381,7 @@
                   "model": {
                     "alias": "usopfw04",
                     "dsType": "influxdb",
-                    "groupBy": [
-                      {
-                        "params": [
-                          "$interval"
-                        ],
-                        "type": "time"
-                      },
-                      {
-                        "params": [
-                          "previous"
-                        ],
-                        "type": "fill"
-                      }
-                    ],
+                    "groupBy": [],
                     "measurement": "ping.usopfw04",
                     "policy": "default",
                     "refId": "D",
@@ -1593,10 +1393,6 @@
                             "value"
                           ],
                           "type": "field"
-                        },
-                        {
-                          "params": [],
-                          "type": "last"
                         },
                         {
                           "params": [
@@ -1641,20 +1437,7 @@
                   "model": {
                     "alias": "usopbw01",
                     "dsType": "influxdb",
-                    "groupBy": [
-                      {
-                        "params": [
-                          "$interval"
-                        ],
-                        "type": "time"
-                      },
-                      {
-                        "params": [
-                          "previous"
-                        ],
-                        "type": "fill"
-                      }
-                    ],
+                    "groupBy": [],
                     "measurement": "ping.usopbw01",
                     "policy": "default",
                     "refId": "E",
@@ -1666,10 +1449,6 @@
                             "value"
                           ],
                           "type": "field"
-                        },
-                        {
-                          "params": [],
-                          "type": "last"
                         },
                         {
                           "params": [
@@ -1714,20 +1493,7 @@
                   "model": {
                     "alias": "usopbw02",
                     "dsType": "influxdb",
-                    "groupBy": [
-                      {
-                        "params": [
-                          "$interval"
-                        ],
-                        "type": "time"
-                      },
-                      {
-                        "params": [
-                          "previous"
-                        ],
-                        "type": "fill"
-                      }
-                    ],
+                    "groupBy": [],
                     "measurement": "ping.usopbw02",
                     "policy": "default",
                     "refId": "F",
@@ -1739,10 +1505,6 @@
                             "value"
                           ],
                           "type": "field"
-                        },
-                        {
-                          "params": [],
-                          "type": "last"
                         },
                         {
                           "params": [
@@ -1787,20 +1549,7 @@
                   "model": {
                     "alias": "usopbw03",
                     "dsType": "influxdb",
-                    "groupBy": [
-                      {
-                        "params": [
-                          "$interval"
-                        ],
-                        "type": "time"
-                      },
-                      {
-                        "params": [
-                          "previous"
-                        ],
-                        "type": "fill"
-                      }
-                    ],
+                    "groupBy": [],
                     "measurement": "ping.usopbw03",
                     "policy": "default",
                     "refId": "G",
@@ -1812,10 +1561,6 @@
                             "value"
                           ],
                           "type": "field"
-                        },
-                        {
-                          "params": [],
-                          "type": "last"
                         },
                         {
                           "params": [
@@ -1860,20 +1605,7 @@
                   "model": {
                     "alias": "usopbw03",
                     "dsType": "influxdb",
-                    "groupBy": [
-                      {
-                        "params": [
-                          "$interval"
-                        ],
-                        "type": "time"
-                      },
-                      {
-                        "params": [
-                          "previous"
-                        ],
-                        "type": "fill"
-                      }
-                    ],
+                    "groupBy": [],
                     "measurement": "ping.usopbw03",
                     "policy": "default",
                     "refId": "G",
@@ -1885,10 +1617,6 @@
                             "value"
                           ],
                           "type": "field"
-                        },
-                        {
-                          "params": [],
-                          "type": "last"
                         },
                         {
                           "params": [
@@ -1935,7 +1663,7 @@
           },
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "influxdb",
           "fill": 1,
           "id": 20,
           "legend": {
@@ -1965,20 +1693,7 @@
             {
               "alias": "usopfw01",
               "dsType": "influxdb",
-              "groupBy": [
-                {
-                  "params": [
-                    "$interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "previous"
-                  ],
-                  "type": "fill"
-                }
-              ],
+              "groupBy": [],
               "measurement": "ping.usopfw01",
               "policy": "default",
               "refId": "A",
@@ -1990,10 +1705,6 @@
                       "value"
                     ],
                     "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "last"
                   },
                   {
                     "params": [
@@ -2014,20 +1725,7 @@
             {
               "alias": "usopfw02",
               "dsType": "influxdb",
-              "groupBy": [
-                {
-                  "params": [
-                    "$interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "previous"
-                  ],
-                  "type": "fill"
-                }
-              ],
+              "groupBy": [],
               "measurement": "ping.usopfw02",
               "policy": "default",
               "refId": "B",
@@ -2039,10 +1737,6 @@
                       "value"
                     ],
                     "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "last"
                   },
                   {
                     "params": [
@@ -2063,20 +1757,7 @@
             {
               "alias": "usopfw03",
               "dsType": "influxdb",
-              "groupBy": [
-                {
-                  "params": [
-                    "$interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "previous"
-                  ],
-                  "type": "fill"
-                }
-              ],
+              "groupBy": [],
               "measurement": "ping.usopfw03",
               "policy": "default",
               "refId": "C",
@@ -2088,10 +1769,6 @@
                       "value"
                     ],
                     "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "last"
                   },
                   {
                     "params": [
@@ -2112,20 +1789,7 @@
             {
               "alias": "usopfw04",
               "dsType": "influxdb",
-              "groupBy": [
-                {
-                  "params": [
-                    "$interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "previous"
-                  ],
-                  "type": "fill"
-                }
-              ],
+              "groupBy": [],
               "measurement": "ping.usopfw04",
               "policy": "default",
               "refId": "D",
@@ -2137,10 +1801,6 @@
                       "value"
                     ],
                     "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "last"
                   },
                   {
                     "params": [
@@ -2161,20 +1821,7 @@
             {
               "alias": "usopbw01",
               "dsType": "influxdb",
-              "groupBy": [
-                {
-                  "params": [
-                    "$interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "previous"
-                  ],
-                  "type": "fill"
-                }
-              ],
+              "groupBy": [],
               "measurement": "ping.usopbw01",
               "policy": "default",
               "refId": "E",
@@ -2186,10 +1833,6 @@
                       "value"
                     ],
                     "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "last"
                   },
                   {
                     "params": [
@@ -2210,20 +1853,7 @@
             {
               "alias": "usopbw02",
               "dsType": "influxdb",
-              "groupBy": [
-                {
-                  "params": [
-                    "$interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "previous"
-                  ],
-                  "type": "fill"
-                }
-              ],
+              "groupBy": [],
               "measurement": "ping.usopbw02",
               "policy": "default",
               "refId": "F",
@@ -2235,10 +1865,6 @@
                       "value"
                     ],
                     "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "last"
                   },
                   {
                     "params": [
@@ -2259,20 +1885,7 @@
             {
               "alias": "usopbw03",
               "dsType": "influxdb",
-              "groupBy": [
-                {
-                  "params": [
-                    "$interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "previous"
-                  ],
-                  "type": "fill"
-                }
-              ],
+              "groupBy": [],
               "measurement": "ping.usopbw03",
               "policy": "default",
               "refId": "G",
@@ -2284,10 +1897,6 @@
                       "value"
                     ],
                     "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "last"
                   },
                   {
                     "params": [
@@ -2308,20 +1917,7 @@
             {
               "alias": "usopbw04",
               "dsType": "influxdb",
-              "groupBy": [
-                {
-                  "params": [
-                    "$interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "previous"
-                  ],
-                  "type": "fill"
-                }
-              ],
+              "groupBy": [],
               "measurement": "ping.usopbw04",
               "policy": "default",
               "refId": "H",
@@ -2333,10 +1929,6 @@
                       "value"
                     ],
                     "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "last"
                   },
                   {
                     "params": [
@@ -2440,7 +2032,7 @@
     "list": []
   },
   "time": {
-    "from": "now-24h",
+    "from": "now-6h",
     "to": "now"
   },
   "timepicker": {

@@ -5,12 +5,13 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "hideControls": true,
-  "id": 7,
+  "hideControls": false,
+  "id": 18,
   "links": [
     {
       "asDropdown": true,
       "icon": "external link",
+      "keepTime": false,
       "tags": [
         "ecl"
       ],
@@ -25,7 +26,7 @@
       "height": "25px",
       "panels": [
         {
-          "content": "<h1><b><center>uSOP for ECL Endcap - Backward</center></b></h1>",
+          "content": "<h1><b><center>uSOP for ECL Endcap - Forward</center></b></h1>",
           "editable": true,
           "error": false,
           "height": "50px",
@@ -52,7 +53,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "ds_graphite_15m",
+          "datasource": "$ds",
           "decimals": 2,
           "editable": true,
           "error": false,
@@ -68,7 +69,7 @@
             "min": true,
             "rightSide": true,
             "show": true,
-            "sortDesc": true,
+            "sortDesc": false,
             "total": false,
             "values": true
           },
@@ -204,7 +205,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "ds_graphite_15m",
+          "datasource": "$ds",
           "decimals": 1,
           "editable": true,
           "error": false,
@@ -321,11 +322,11 @@
         "allValue": "",
         "current": {
           "tags": [],
-          "text": "1B + 2B + 3B",
+          "text": "1F + 2F + 3F",
           "value": [
-            "1B",
-            "2B",
-            "3B"
+            "1F",
+            "2F",
+            "3F"
           ]
         },
         "datasource": null,
@@ -342,86 +343,86 @@
           },
           {
             "selected": true,
-            "text": "1B",
-            "value": "1B"
+            "text": "1F",
+            "value": "1F"
           },
           {
             "selected": true,
-            "text": "2B",
-            "value": "2B"
+            "text": "2F",
+            "value": "2F"
           },
           {
             "selected": true,
-            "text": "3B",
-            "value": "3B"
+            "text": "3F",
+            "value": "3F"
           },
           {
             "selected": false,
-            "text": "4B",
-            "value": "4B"
+            "text": "4F",
+            "value": "4F"
           },
           {
             "selected": false,
-            "text": "5B",
-            "value": "5B"
+            "text": "5F",
+            "value": "5F"
           },
           {
             "selected": false,
-            "text": "6B",
-            "value": "6B"
+            "text": "6F",
+            "value": "6F"
           },
           {
             "selected": false,
-            "text": "7B",
-            "value": "7B"
+            "text": "7F",
+            "value": "7F"
           },
           {
             "selected": false,
-            "text": "8B",
-            "value": "8B"
+            "text": "8F",
+            "value": "8F"
           },
           {
             "selected": false,
-            "text": "9B",
-            "value": "9B"
+            "text": "9F",
+            "value": "9F"
           },
           {
             "selected": false,
-            "text": "10B",
-            "value": "10B"
+            "text": "10F",
+            "value": "10F"
           },
           {
             "selected": false,
-            "text": "11B",
-            "value": "11B"
+            "text": "11F",
+            "value": "11F"
           },
           {
             "selected": false,
-            "text": "12B",
-            "value": "12B"
+            "text": "12F",
+            "value": "12F"
           },
           {
             "selected": false,
-            "text": "13B",
-            "value": "13B"
+            "text": "13F",
+            "value": "13F"
           },
           {
             "selected": false,
-            "text": "14B",
-            "value": "14B"
+            "text": "14F",
+            "value": "14F"
           },
           {
             "selected": false,
-            "text": "15B",
-            "value": "15B"
+            "text": "15F",
+            "value": "15F"
           },
           {
             "selected": false,
-            "text": "16B",
-            "value": "16B"
+            "text": "16F",
+            "value": "16F"
           }
         ],
-        "query": "1B,2B,3B,4B,5B,6B,7B,8B,9B,10B,11B,12B,13B,14B,15B,16B",
+        "query": "1F,2F,3F,4F,5F,6F,7F,8F,9F,10F,11F,12F,13F,14F,15F,16F",
         "refresh": 0,
         "type": "custom"
       },
@@ -429,11 +430,11 @@
         "allValue": "",
         "current": {
           "tags": [],
-          "text": "1B + 2B + 3B",
+          "text": "1F + 2F + 3F",
           "value": [
-            "1B",
-            "2B",
-            "3B"
+            "1F",
+            "2F",
+            "3F"
           ]
         },
         "datasource": null,
@@ -450,93 +451,108 @@
           },
           {
             "selected": true,
-            "text": "1B",
-            "value": "1B"
+            "text": "1F",
+            "value": "1F"
           },
           {
             "selected": true,
-            "text": "2B",
-            "value": "2B"
+            "text": "2F",
+            "value": "2F"
           },
           {
             "selected": true,
-            "text": "3B",
-            "value": "3B"
+            "text": "3F",
+            "value": "3F"
           },
           {
             "selected": false,
-            "text": "4B",
-            "value": "4B"
+            "text": "4F",
+            "value": "4F"
           },
           {
             "selected": false,
-            "text": "5B",
-            "value": "5B"
+            "text": "5F",
+            "value": "5F"
           },
           {
             "selected": false,
-            "text": "6B",
-            "value": "6B"
+            "text": "6F",
+            "value": "6F"
           },
           {
             "selected": false,
-            "text": "7B",
-            "value": "7B"
+            "text": "7F",
+            "value": "7F"
           },
           {
             "selected": false,
-            "text": "8B",
-            "value": "8B"
+            "text": "8F",
+            "value": "8F"
           },
           {
             "selected": false,
-            "text": "9B",
-            "value": "9B"
+            "text": "9F",
+            "value": "9F"
           },
           {
             "selected": false,
-            "text": "10B",
-            "value": "10B"
+            "text": "10F",
+            "value": "10F"
           },
           {
             "selected": false,
-            "text": "11B",
-            "value": "11B"
+            "text": "11F",
+            "value": "11F"
           },
           {
             "selected": false,
-            "text": "12B",
-            "value": "12B"
+            "text": "12F",
+            "value": "12F"
           },
           {
             "selected": false,
-            "text": "13B",
-            "value": "13B"
+            "text": "13F",
+            "value": "13F"
           },
           {
             "selected": false,
-            "text": "14B",
-            "value": "14B"
+            "text": "14F",
+            "value": "14F"
           },
           {
             "selected": false,
-            "text": "15B",
-            "value": "15B"
+            "text": "15F",
+            "value": "15F"
           },
           {
             "selected": false,
-            "text": "16B",
-            "value": "16B"
+            "text": "16F",
+            "value": "16F"
           }
         ],
-        "query": "1B,2B,3B,4B,5B,6B,7B,8B,9B,10B,11B,12B,13B,14B,15B,16B",
+        "query": "1F,2F,3F,4F,5F,6F,7F,8F,9F,10F,11F,12F,13F,14F,15F,16F",
         "refresh": 0,
         "type": "custom"
+      },
+      {
+        "current": {
+          "tags": [],
+          "text": "ds_graphite_15m",
+          "value": "ds_graphite_15m"
+        },
+        "hide": 0,
+        "label": "downsample",
+        "name": "ds",
+        "options": [],
+        "query": "influxdb",
+        "refresh": 1,
+        "regex": "/^ds/",
+        "type": "datasource"
       }
     ]
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-24h",
     "to": "now"
   },
   "timepicker": {
@@ -565,5 +581,5 @@
     ]
   },
   "timezone": "browser",
-  "title": "Belle2 ECL Endcap monitoring - backward"
+  "title": "test"
 }

@@ -2,7 +2,7 @@
   "annotations": {
     "list": []
   },
-  "editable": false,
+  "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
   "hideControls": true,
@@ -25,7 +25,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "ds_graphite_15m",
           "fill": 1,
           "id": 5,
           "legend": {
@@ -61,20 +61,7 @@
             {
               "alias": "hall temperature",
               "dsType": "influxdb",
-              "groupBy": [
-                {
-                  "params": [
-                    "$interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "previous"
-                  ],
-                  "type": "fill"
-                }
-              ],
+              "groupBy": [],
               "measurement": "snmp",
               "policy": "default",
               "refId": "A",
@@ -83,13 +70,9 @@
                 [
                   {
                     "params": [
-                      "value"
+                      "mean_value"
                     ],
                     "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "mean"
                   }
                 ]
               ],
@@ -149,7 +132,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "ds_graphite_15m",
           "fill": 1,
           "id": 6,
           "legend": {
@@ -185,20 +168,7 @@
             {
               "alias": "hall relative humidity",
               "dsType": "influxdb",
-              "groupBy": [
-                {
-                  "params": [
-                    "$interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "previous"
-                  ],
-                  "type": "fill"
-                }
-              ],
+              "groupBy": [],
               "measurement": "snmp",
               "policy": "default",
               "refId": "A",
@@ -207,13 +177,9 @@
                 [
                   {
                     "params": [
-                      "value"
+                      "mean_value"
                     ],
                     "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "mean"
                   }
                 ]
               ],
@@ -1293,7 +1259,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "ds_graphite_15m",
           "fill": 1,
           "id": 1,
           "legend": {
@@ -1329,20 +1295,7 @@
             {
               "alias": "PDU voltage",
               "dsType": "influxdb",
-              "groupBy": [
-                {
-                  "params": [
-                    "$interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "previous"
-                  ],
-                  "type": "fill"
-                }
-              ],
+              "groupBy": [],
               "measurement": "snmp",
               "policy": "default",
               "refId": "A",
@@ -1351,13 +1304,9 @@
                 [
                   {
                     "params": [
-                      "value"
+                      "mean_value"
                     ],
                     "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "mean"
                   }
                 ]
               ],
@@ -1417,7 +1366,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "ds_graphite_15m",
           "fill": 1,
           "id": 2,
           "legend": {
@@ -1453,20 +1402,7 @@
             {
               "alias": "PDU current",
               "dsType": "influxdb",
-              "groupBy": [
-                {
-                  "params": [
-                    "$interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "previous"
-                  ],
-                  "type": "fill"
-                }
-              ],
+              "groupBy": [],
               "measurement": "snmp",
               "policy": "default",
               "refId": "A",
@@ -1475,13 +1411,9 @@
                 [
                   {
                     "params": [
-                      "value"
+                      "mean_value"
                     ],
                     "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "mean"
                   }
                 ]
               ],
@@ -1541,7 +1473,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "ds_graphite_15m",
           "fill": 1,
           "id": 3,
           "legend": {
@@ -1577,20 +1509,7 @@
             {
               "alias": "PDU power",
               "dsType": "influxdb",
-              "groupBy": [
-                {
-                  "params": [
-                    "$interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "previous"
-                  ],
-                  "type": "fill"
-                }
-              ],
+              "groupBy": [],
               "measurement": "snmp",
               "policy": "default",
               "refId": "A",
@@ -1599,13 +1518,9 @@
                 [
                   {
                     "params": [
-                      "value"
+                      "mean_value"
                     ],
                     "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "mean"
                   }
                 ]
               ],
@@ -1677,7 +1592,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": null,
+          "datasource": "ds_graphite_15m",
           "fill": 0,
           "id": 16,
           "legend": {
@@ -1713,20 +1628,7 @@
             {
               "alias": "outlet 1",
               "dsType": "influxdb",
-              "groupBy": [
-                {
-                  "params": [
-                    "$interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "previous"
-                  ],
-                  "type": "fill"
-                }
-              ],
+              "groupBy": [],
               "measurement": "snmp.outlet1",
               "policy": "default",
               "refId": "A",
@@ -1735,13 +1637,9 @@
                 [
                   {
                     "params": [
-                      "value"
+                      "mean_value"
                     ],
                     "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "mean"
                   }
                 ]
               ],
@@ -1762,20 +1660,7 @@
             {
               "alias": "bw crate",
               "dsType": "influxdb",
-              "groupBy": [
-                {
-                  "params": [
-                    "$interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "previous"
-                  ],
-                  "type": "fill"
-                }
-              ],
+              "groupBy": [],
               "measurement": "snmp.bwcrate",
               "policy": "default",
               "refId": "B",
@@ -1784,13 +1669,9 @@
                 [
                   {
                     "params": [
-                      "value"
+                      "mean_value"
                     ],
                     "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "mean"
                   }
                 ]
               ],
@@ -1811,20 +1692,7 @@
             {
               "alias": "sw04p1",
               "dsType": "influxdb",
-              "groupBy": [
-                {
-                  "params": [
-                    "$interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "previous"
-                  ],
-                  "type": "fill"
-                }
-              ],
+              "groupBy": [],
               "measurement": "snmp.sw04p1",
               "policy": "default",
               "refId": "C",
@@ -1833,13 +1701,9 @@
                 [
                   {
                     "params": [
-                      "value"
+                      "mean_value"
                     ],
                     "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "mean"
                   }
                 ]
               ],
@@ -1860,20 +1724,7 @@
             {
               "alias": "sw04p2",
               "dsType": "influxdb",
-              "groupBy": [
-                {
-                  "params": [
-                    "$interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "previous"
-                  ],
-                  "type": "fill"
-                }
-              ],
+              "groupBy": [],
               "measurement": "snmp.sw04p2",
               "policy": "default",
               "refId": "D",
@@ -1882,13 +1733,9 @@
                 [
                   {
                     "params": [
-                      "value"
+                      "mean_value"
                     ],
                     "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "mean"
                   }
                 ]
               ],
@@ -1909,20 +1756,7 @@
             {
               "alias": "sw05p1",
               "dsType": "influxdb",
-              "groupBy": [
-                {
-                  "params": [
-                    "$interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "previous"
-                  ],
-                  "type": "fill"
-                }
-              ],
+              "groupBy": [],
               "measurement": "snmp.sw05p1",
               "policy": "default",
               "refId": "E",
@@ -1934,10 +1768,6 @@
                       "value"
                     ],
                     "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "mean"
                   }
                 ]
               ],
@@ -1958,20 +1788,7 @@
             {
               "alias": "sw05p2",
               "dsType": "influxdb",
-              "groupBy": [
-                {
-                  "params": [
-                    "$interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "previous"
-                  ],
-                  "type": "fill"
-                }
-              ],
+              "groupBy": [],
               "measurement": "snmp.sw05p2",
               "policy": "default",
               "refId": "F",
@@ -1980,13 +1797,9 @@
                 [
                   {
                     "params": [
-                      "value"
+                      "mean_value"
                     ],
                     "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "mean"
                   }
                 ]
               ],
@@ -2007,20 +1820,7 @@
             {
               "alias": "outlet7",
               "dsType": "influxdb",
-              "groupBy": [
-                {
-                  "params": [
-                    "$interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "previous"
-                  ],
-                  "type": "fill"
-                }
-              ],
+              "groupBy": [],
               "measurement": "snmp.outlet7",
               "policy": "default",
               "refId": "G",
@@ -2029,13 +1829,9 @@
                 [
                   {
                     "params": [
-                      "value"
+                      "mean_value"
                     ],
                     "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "mean"
                   }
                 ]
               ],
@@ -2056,20 +1852,7 @@
             {
               "alias": "fw crate",
               "dsType": "influxdb",
-              "groupBy": [
-                {
-                  "params": [
-                    "$interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "previous"
-                  ],
-                  "type": "fill"
-                }
-              ],
+              "groupBy": [],
               "measurement": "snmp.fwcrate",
               "policy": "default",
               "refId": "H",
@@ -2078,13 +1861,9 @@
                 [
                   {
                     "params": [
-                      "value"
+                      "mean_value"
                     ],
                     "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "mean"
                   }
                 ]
               ],
@@ -2159,7 +1938,7 @@
     "list": []
   },
   "time": {
-    "from": "now-15m",
+    "from": "now-6h",
     "to": "now"
   },
   "timepicker": {

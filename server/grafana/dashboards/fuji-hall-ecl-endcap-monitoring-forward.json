@@ -2,7 +2,7 @@
   "annotations": {
     "list": []
   },
-  "editable": false,
+  "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
   "hideControls": true,
@@ -26,7 +26,7 @@
       "height": "25px",
       "panels": [
         {
-          "content": "<h1><b><center>uSOP for ECL Endcap @Fuji hall- Forward</center></b></h1>",
+          "content": "<h1><b><center>uSOP for ECL Endcap @Fuji hall - Forward</center></b></h1>",
           "editable": true,
           "error": false,
           "height": "50px",
@@ -53,7 +53,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "influxdb",
+          "datasource": "ds_graphite_15m",
           "decimals": 2,
           "editable": true,
           "error": false,
@@ -89,20 +89,7 @@
             {
               "alias": "$0.temp - 1",
               "dsType": "influxdb",
-              "groupBy": [
-                {
-                  "params": [
-                    "$interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "null"
-                  ],
-                  "type": "fill"
-                }
-              ],
+              "groupBy": [],
               "measurement": "/^FUJI-S$sector.temperature/",
               "policy": "default",
               "refId": "A",
@@ -111,13 +98,9 @@
                 [
                   {
                     "params": [
-                      "value"
+                      "mean_value"
                     ],
                     "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "mean"
                   }
                 ]
               ],
@@ -132,20 +115,7 @@
             {
               "alias": "$0.temp - 2",
               "dsType": "influxdb",
-              "groupBy": [
-                {
-                  "params": [
-                    "$interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "null"
-                  ],
-                  "type": "fill"
-                }
-              ],
+              "groupBy": [],
               "measurement": "/^FUJI-S$sector.temperature/",
               "policy": "default",
               "refId": "B",
@@ -157,10 +127,6 @@
                       "value"
                     ],
                     "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "mean"
                   }
                 ]
               ],
@@ -175,20 +141,7 @@
             {
               "alias": "$0.temp - 3",
               "dsType": "influxdb",
-              "groupBy": [
-                {
-                  "params": [
-                    "$interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "null"
-                  ],
-                  "type": "fill"
-                }
-              ],
+              "groupBy": [],
               "measurement": "/^FUJI-S$sector.temperature/",
               "policy": "default",
               "refId": "C",
@@ -197,13 +150,9 @@
                 [
                   {
                     "params": [
-                      "value"
+                      "mean_value"
                     ],
                     "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "mean"
                   }
                 ]
               ],
@@ -256,7 +205,7 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "influxdb",
+          "datasource": "ds_graphite_15m",
           "decimals": 1,
           "editable": true,
           "error": false,
@@ -292,20 +241,7 @@
             {
               "alias": "$0.hum",
               "dsType": "influxdb",
-              "groupBy": [
-                {
-                  "params": [
-                    "$interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "null"
-                  ],
-                  "type": "fill"
-                }
-              ],
+              "groupBy": [],
               "measurement": "/^FUJI-S$sectorh.humidity/",
               "policy": "default",
               "refId": "A",
@@ -314,13 +250,9 @@
                 [
                   {
                     "params": [
-                      "value"
+                      "mean_value"
                     ],
                     "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "median"
                   }
                 ]
               ],
