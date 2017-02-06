@@ -6,12 +6,11 @@
   "gnetId": null,
   "graphTooltip": 1,
   "hideControls": true,
-  "id": 5,
+  "id": 20,
   "links": [
     {
       "asDropdown": true,
       "icon": "external link",
-      "keepTime": false,
       "tags": [
         "ecl"
       ],
@@ -19,7 +18,7 @@
       "type": "dashboards"
     }
   ],
-  "refresh": "10s",
+  "refresh": "15m",
   "rows": [
     {
       "collapse": false,
@@ -48,7 +47,7 @@
     },
     {
       "collapse": false,
-      "height": "350px",
+      "height": 326,
       "panels": [
         {
           "aliasColors": {},
@@ -59,7 +58,7 @@
           "error": false,
           "fill": 0,
           "grid": {},
-          "height": "350px",
+          "height": "500px",
           "id": 2,
           "legend": {
             "alignAsTable": true,
@@ -67,9 +66,9 @@
             "current": true,
             "max": true,
             "min": true,
-            "rightSide": true,
+            "rightSide": false,
             "show": true,
-            "sortDesc": false,
+            "sortDesc": true,
             "total": false,
             "values": true
           },
@@ -82,7 +81,7 @@
           "points": true,
           "renderer": "flot",
           "seriesOverrides": [],
-          "span": 12,
+          "span": 7,
           "stack": false,
           "steppedLine": false,
           "targets": [
@@ -168,7 +167,7 @@
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "temperature monitor",
+          "title": "T trend - in the selected range (avg on 15 min)",
           "tooltip": {
             "msResolution": true,
             "shared": false,
@@ -205,21 +204,22 @@
         {
           "aliasColors": {},
           "bars": false,
-          "datasource": "ds_graphite_15m",
-          "decimals": 1,
+          "datasource": null,
+          "decimals": 2,
+          "description": "",
           "editable": true,
           "error": false,
           "fill": 0,
           "grid": {},
-          "height": "350px",
-          "id": 3,
+          "height": "500px",
+          "id": 5,
           "legend": {
             "alignAsTable": true,
             "avg": true,
             "current": true,
             "max": true,
             "min": true,
-            "rightSide": true,
+            "rightSide": false,
             "show": true,
             "sortDesc": true,
             "total": false,
@@ -234,7 +234,190 @@
           "points": true,
           "renderer": "flot",
           "seriesOverrides": [],
-          "span": 12,
+          "span": 5,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "$0.temp - 1",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "/^S$sector.temperature/",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [
+                      "15"
+                    ],
+                    "type": "moving_average"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "resource",
+                  "operator": "=",
+                  "value": "1"
+                }
+              ]
+            },
+            {
+              "alias": "$0.temp - 2",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "/^S$sector.temperature/",
+              "policy": "default",
+              "refId": "B",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [
+                      "15"
+                    ],
+                    "type": "moving_average"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "resource",
+                  "operator": "=",
+                  "value": "2"
+                }
+              ]
+            },
+            {
+              "alias": "$0.temp - 3",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "/^S$sector.temperature/",
+              "policy": "default",
+              "refId": "C",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [
+                      "15"
+                    ],
+                    "type": "moving_average"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "resource",
+                  "operator": "=",
+                  "value": "3"
+                }
+              ]
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": "24h",
+          "timeShift": null,
+          "title": "T trend - last 24 hours (moving avg on 15 min)",
+          "tooltip": {
+            "msResolution": true,
+            "shared": false,
+            "sort": 0,
+            "value_type": "cumulative"
+          },
+          "transparent": true,
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "celsius",
+              "label": "temperature",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "percent",
+              "label": "",
+              "logBase": 1,
+              "max": 100,
+              "min": null,
+              "show": false
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Row",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 250,
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": "ds_graphite_15m",
+          "decimals": 1,
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {},
+          "height": "500px",
+          "id": 3,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "sort": "min",
+            "sortDesc": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 1,
+          "points": true,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 7,
           "stack": false,
           "steppedLine": false,
           "targets": [
@@ -268,7 +451,114 @@
           "thresholds": [],
           "timeFrom": null,
           "timeShift": null,
-          "title": "relative humidity monitor",
+          "title": "Rh trend - in the selected range (avg on 15 min)",
+          "tooltip": {
+            "msResolution": true,
+            "shared": false,
+            "sort": 0,
+            "value_type": "cumulative"
+          },
+          "transparent": true,
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "percent",
+              "label": "humidity",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "percent",
+              "label": "",
+              "logBase": 1,
+              "max": 100,
+              "min": null,
+              "show": false
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "datasource": null,
+          "decimals": 1,
+          "editable": true,
+          "error": false,
+          "fill": 0,
+          "grid": {},
+          "height": "500px",
+          "id": 6,
+          "legend": {
+            "alignAsTable": true,
+            "avg": true,
+            "current": true,
+            "max": true,
+            "min": true,
+            "rightSide": false,
+            "show": true,
+            "sort": "min",
+            "sortDesc": true,
+            "total": false,
+            "values": true
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 1,
+          "points": true,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "span": 5,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "$0.hum",
+              "dsType": "influxdb",
+              "groupBy": [],
+              "measurement": "/^S$sectorh.humidity/",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [
+                      "15"
+                    ],
+                    "type": "moving_average"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "resource",
+                  "operator": "=",
+                  "value": "1"
+                }
+              ]
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": "24h",
+          "timeShift": null,
+          "title": "Rh trend - last 24 hours (moving avg on 15 min)",
           "tooltip": {
             "msResolution": true,
             "shared": false,
@@ -307,7 +597,7 @@
       "repeatIteration": null,
       "repeatRowId": null,
       "showTitle": false,
-      "title": "Row",
+      "title": "Dashboard Row",
       "titleSize": "h6"
     }
   ],
@@ -322,11 +612,12 @@
         "allValue": "",
         "current": {
           "tags": [],
-          "text": "1F + 2F + 3F",
+          "text": "1F + 5F + 9F + 13F",
           "value": [
             "1F",
-            "2F",
-            "3F"
+            "5F",
+            "9F",
+            "13F"
           ]
         },
         "datasource": null,
@@ -347,12 +638,12 @@
             "value": "1F"
           },
           {
-            "selected": true,
+            "selected": false,
             "text": "2F",
             "value": "2F"
           },
           {
-            "selected": true,
+            "selected": false,
             "text": "3F",
             "value": "3F"
           },
@@ -362,7 +653,7 @@
             "value": "4F"
           },
           {
-            "selected": false,
+            "selected": true,
             "text": "5F",
             "value": "5F"
           },
@@ -382,7 +673,7 @@
             "value": "8F"
           },
           {
-            "selected": false,
+            "selected": true,
             "text": "9F",
             "value": "9F"
           },
@@ -402,7 +693,7 @@
             "value": "12F"
           },
           {
-            "selected": false,
+            "selected": true,
             "text": "13F",
             "value": "13F"
           },
@@ -430,11 +721,12 @@
         "allValue": "",
         "current": {
           "tags": [],
-          "text": "1F + 2F + 3F",
+          "text": "1F + 5F + 9F + 13F",
           "value": [
             "1F",
-            "2F",
-            "3F"
+            "5F",
+            "9F",
+            "13F"
           ]
         },
         "datasource": null,
@@ -455,12 +747,12 @@
             "value": "1F"
           },
           {
-            "selected": true,
+            "selected": false,
             "text": "2F",
             "value": "2F"
           },
           {
-            "selected": true,
+            "selected": false,
             "text": "3F",
             "value": "3F"
           },
@@ -470,7 +762,7 @@
             "value": "4F"
           },
           {
-            "selected": false,
+            "selected": true,
             "text": "5F",
             "value": "5F"
           },
@@ -490,7 +782,7 @@
             "value": "8F"
           },
           {
-            "selected": false,
+            "selected": true,
             "text": "9F",
             "value": "9F"
           },
@@ -510,7 +802,7 @@
             "value": "12F"
           },
           {
-            "selected": false,
+            "selected": true,
             "text": "13F",
             "value": "13F"
           },
@@ -537,7 +829,7 @@
     ]
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-7d",
     "to": "now"
   },
   "timepicker": {
