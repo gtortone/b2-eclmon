@@ -6,7 +6,7 @@ read pwd
 echo "please press return to confirm or CTRL-C to exit"
 read
 
-for i in `grep --exclude=do_*,conf/wizzy.json -lR password *`; do sed -i "s|\"password\": \"\(.*\)\"|\"password\": \"$pwd\"|" $i; done
+for i in `grep --exclude=do_backup.sh,do_restore.sh,conf/wizzy.json -lR password *`; do sed -i "s|\"password\": \"\(.*\)\"|\"password\": \"$pwd\"|" $i; done
 
 wizzy init
 wizzy export org 1

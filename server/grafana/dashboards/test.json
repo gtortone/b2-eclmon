@@ -2,10 +2,10 @@
   "annotations": {
     "list": []
   },
-  "editable": true,
+  "editable": false,
   "gnetId": null,
   "graphTooltip": 1,
-  "hideControls": false,
+  "hideControls": true,
   "id": 18,
   "links": [
     {
@@ -536,7 +536,6 @@
       },
       {
         "current": {
-          "tags": [],
           "text": "ds_graphite_15m",
           "value": "ds_graphite_15m"
         },
