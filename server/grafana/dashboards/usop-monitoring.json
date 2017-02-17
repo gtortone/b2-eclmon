@@ -2,7 +2,7 @@
   "annotations": {
     "list": []
   },
-  "editable": false,
+  "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
   "hideControls": true,
@@ -982,7 +982,7 @@
           "repeat": null,
           "seriesOverrides": [],
           "span": 6,
-          "stack": true,
+          "stack": false,
           "steppedLine": false,
           "targets": [
             {
@@ -1019,7 +1019,7 @@
               ]
             },
             {
-              "alias": "cpu.system",
+              "alias": "CPU system",
               "dsType": "influxdb",
               "groupBy": [],
               "measurement": "cpu.percent.system",
@@ -1051,7 +1051,7 @@
               ]
             },
             {
-              "alias": "cpu.user",
+              "alias": "CPU user",
               "dsType": "influxdb",
               "groupBy": [],
               "measurement": "cpu.percent.user",
@@ -1091,7 +1091,7 @@
             "msResolution": true,
             "shared": true,
             "sort": 0,
-            "value_type": "cumulative"
+            "value_type": "individual"
           },
           "transparent": true,
           "type": "graph",
@@ -1154,10 +1154,11 @@
           "renderer": "flot",
           "seriesOverrides": [],
           "span": 6,
-          "stack": true,
+          "stack": false,
           "steppedLine": false,
           "targets": [
             {
+              "alias": "memory free",
               "dsType": "influxdb",
               "groupBy": [],
               "hide": true,
@@ -1190,8 +1191,10 @@
               ]
             },
             {
+              "alias": "memory used",
               "dsType": "influxdb",
               "groupBy": [],
+              "hide": false,
               "measurement": "memory.used",
               "policy": "default",
               "refId": "B",
@@ -1221,8 +1224,10 @@
               ]
             },
             {
+              "alias": "memory buffered",
               "dsType": "influxdb",
               "groupBy": [],
+              "hide": false,
               "measurement": "memory.buffered",
               "policy": "default",
               "refId": "C",
@@ -1252,8 +1257,10 @@
               ]
             },
             {
+              "alias": "memory cached",
               "dsType": "influxdb",
               "groupBy": [],
+              "hide": false,
               "measurement": "memory.cached",
               "policy": "default",
               "refId": "D",
@@ -1291,7 +1298,7 @@
             "msResolution": true,
             "shared": true,
             "sort": 0,
-            "value_type": "cumulative"
+            "value_type": "individual"
           },
           "transparent": true,
           "type": "graph",
@@ -1704,7 +1711,14 @@
           "targets": [
             {
               "dsType": "influxdb",
-              "groupBy": [],
+              "groupBy": [
+                {
+                  "params": [
+                    "$interval"
+                  ],
+                  "type": "time"
+                }
+              ],
               "measurement": "interface.if_octets.rx",
               "policy": "default",
               "refId": "A",
@@ -1716,6 +1730,10 @@
                       "value"
                     ],
                     "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
                   }
                 ]
               ],
@@ -1802,7 +1820,14 @@
           "targets": [
             {
               "dsType": "influxdb",
-              "groupBy": [],
+              "groupBy": [
+                {
+                  "params": [
+                    "$interval"
+                  ],
+                  "type": "time"
+                }
+              ],
               "measurement": "interface.if_octets.tx",
               "policy": "default",
               "refId": "A",
@@ -1814,6 +1839,10 @@
                       "value"
                     ],
                     "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
                   }
                 ]
               ],
@@ -1886,7 +1915,7 @@
           "renderer": "flot",
           "seriesOverrides": [],
           "span": 6,
-          "stack": true,
+          "stack": false,
           "steppedLine": false,
           "targets": [
             {
@@ -2057,7 +2086,7 @@
           "renderer": "flot",
           "seriesOverrides": [],
           "span": 6,
-          "stack": true,
+          "stack": false,
           "steppedLine": false,
           "targets": [
             {
@@ -2133,7 +2162,7 @@
             "msResolution": true,
             "shared": true,
             "sort": 0,
-            "value_type": "cumulative"
+            "value_type": "individual"
           },
           "transparent": true,
           "type": "graph",
@@ -2450,6 +2479,8 @@
       {
         "allValue": "",
         "current": {
+          "selected": true,
+          "tags": [],
           "text": "usopfw01",
           "value": "usopfw01"
         },

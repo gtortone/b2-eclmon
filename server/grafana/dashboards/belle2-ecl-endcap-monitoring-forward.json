@@ -2,7 +2,7 @@
   "annotations": {
     "list": []
   },
-  "editable": false,
+  "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
   "hideControls": true,
@@ -256,7 +256,7 @@
                   },
                   {
                     "params": [
-                      "15"
+                      "7"
                     ],
                     "type": "moving_average"
                   }
@@ -288,7 +288,7 @@
                   },
                   {
                     "params": [
-                      "15"
+                      "7"
                     ],
                     "type": "moving_average"
                   }
@@ -320,7 +320,7 @@
                   },
                   {
                     "params": [
-                      "15"
+                      "7"
                     ],
                     "type": "moving_average"
                   }
@@ -338,7 +338,7 @@
           "thresholds": [],
           "timeFrom": "24h",
           "timeShift": null,
-          "title": "T trend - last 24 hours (moving avg on 15 min)",
+          "title": "T trend - (moving avg on 7 min)",
           "tooltip": {
             "msResolution": true,
             "shared": false,
@@ -540,7 +540,7 @@
                   },
                   {
                     "params": [
-                      "15"
+                      "7"
                     ],
                     "type": "moving_average"
                   }
@@ -558,7 +558,7 @@
           "thresholds": [],
           "timeFrom": "24h",
           "timeShift": null,
-          "title": "Rh trend - last 24 hours (moving avg on 15 min)",
+          "title": "Rh trend - (moving avg on 7 min)",
           "tooltip": {
             "msResolution": true,
             "shared": false,
