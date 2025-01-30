@@ -48,9 +48,14 @@ Interval 10
 
 <Plugin write_http>
   <Node "http-collector">
-    URL "http://10.1.1.10:8000/put/"	# modify here
+    URL "https://10.1.3.3:8000/put/"   # modify here
+    User "admin"
+    Password "4dm1n"
+    VerifyHost false
+    VerifyPeer false
     Format "JSON"
     BufferSize 1024
     StoreRates true
   </Node>
 </Plugin>
+
