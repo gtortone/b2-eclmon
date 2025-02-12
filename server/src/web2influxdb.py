@@ -12,7 +12,9 @@ import base64
 import tornado.ioloop
 import tornado.options
 import tornado.web
-import json, socket
+import json
+from datetime import datetime
+from influxdb_client import InfluxDBClient
 
 from tornado.options import define, options
 define("port", default=8000, help="run on the given port", type=int)
@@ -23,17 +25,14 @@ define("ssl_cert", default="ssl-cert.crt", help="SSL certificate file")
 define("ssl_key", default="ssl-key.key", help="SSL key file")
 
 debug = True
-ghost = "localhost"	# modify here
-gport = 2003
+write_api = None
 
 # base collectd metric format
 # host "." plugin ["-" plugin instance] "/" type ["-" type instance]
 
 class PutHandler(tornado.web.RequestHandler):
-    def prepare(self):
-        if debug: 
-            print(self.request.headers)
 
+    def prepare(self):
         auth_header = self.request.headers.get('Authorization')
         if auth_header is None: 
             if debug: 
@@ -58,14 +57,8 @@ class PutHandler(tornado.web.RequestHandler):
         print("auth ok")
 
     def post(self):
-        if debug: print(self.request.headers)
-
-        
         string = self.request.body.decode("utf-8")
         
-        if debug: 
-            print(string)
-
         try:
             data = json.loads(string)
         except:
@@ -73,61 +66,37 @@ class PutHandler(tornado.web.RequestHandler):
 
         lines = []
         for d in data:
-            gtime = int(d['time'])
             host = d['host'].replace('.','_')
-           
-            if d['plugin_instance']:
-        	    #pluginstring = d['plugin'] + "-" + d['plugin_instance']
-        	    pluginstring = d['plugin'] + "." + d['plugin_instance']
-            else:
-        	    pluginstring = d['plugin']
-        
-            if d['type_instance']:
-        	    typestring = d['type'] + "." + d['type_instance']
-            else:
-        	    typestring = d['type']
-        
-            t = dict((ord(char), u'_') for char in ' ,')
-            t.update(dict((ord(char), None) for char in '+()"'))
-            s = pluginstring + "." + typestring
-            superstring = s.translate(t)
-        
-            for i, value in enumerate(d['values']):
-                if value != -999:
-                    metric = "collectd." + host + "." + superstring
-                    if len(d['values']) > 1:
-        	            metric = metric + "." + d['dsnames'][i]
-                    line = "{0} {1} {2}".format(metric, value, gtime)
-                    line = line + "\n"
-                    lines.append(line)
-        
-        if len(lines) > 0:
-            lines.append('')
+
+            for i, v in enumerate(d['dsnames']):
+                if d['plugin'] == d['type']:
+                    measurement = f"{d['plugin']}"
+                else: 
+                    measurement = f"{d['plugin']}.{d['type']}"
+                if d['type_instance']:
+                    measurement = f"{measurement}.{d['type_instance']}"
+                resource = d['plugin_instance'] if d['plugin_instance'] else d['plugin']
+
+                if d['dsnames'][i] != 'value':
+                    measurement = f"{measurement}.{d['dsnames'][i]}"
+
+                if d['values'][i] != -999:
+                    lines.append({
+                        "measurement": measurement,
+                        "tags": {"host": host, "resource": resource},
+                        "fields": {"value": d['values'][i]},
+                        "time": int(d['time'])
+                    })
         
         if debug:
-           print("=========================")
-           print(lines)
-        
+            for line in lines:
+                print(datetime.fromtimestamp(line['time']), line)
+
         try:
-            sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            sock.connect((ghost, gport))
-            connected = True
+            write_api.write("graphite", "INFN", lines)
         except:
-            connected = False
             print('Failed: no connection to db backend')
-        
-        if connected:
-            try:
-        	    for l in lines:               
-        	        sock.sendall(l.encode())
-        	    sock.close()
-            except socket.error as e:
-                connected = False
-                if isinstance(e.args, tuple):
-                    output = 'Failed: socket error %d' % e[0]
-                else:
-                    output = 'Failed: socket error'
-                print(output)
+
         
 if __name__ == "__main__":
     tornado.options.parse_command_line()
@@ -149,5 +118,14 @@ if __name__ == "__main__":
     else:
        http_server = tornado.httpserver.HTTPServer(app)
 
+    client = InfluxDBClient(url="http://localhost:8086", token="", org="INFN")
+    write_api = client.write_api()
+
     http_server.listen(options.port)
-    tornado.ioloop.IOLoop.instance().start()
+    try:
+        tornado.ioloop.IOLoop.instance().start()
+    except:
+        write_api.flush()
+        write_api.close()
+        client.close()
+        print("Bye!")
