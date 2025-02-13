@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # to generate a SSL certificate:
 # openssl req -x509 -newkey rsa:4096 -sha256 -nodes -keyout b2ecl-na.key -out b2ecl-na.crt  -days 3650
 #
@@ -15,7 +15,7 @@ import tornado.web
 import json
 from datetime import datetime
 from influxdb_client import InfluxDBClient
-
+from secret import token
 from tornado.options import define, options
 define("port", default=8000, help="run on the given port", type=int)
 define("https", default="yes", help="enable http with SSL")
@@ -66,31 +66,56 @@ class PutHandler(tornado.web.RequestHandler):
 
         lines = []
         for d in data:
-            host = d['host'].replace('.','_')
+            host = d['host'].split('.')[0]
 
             for i, v in enumerate(d['dsnames']):
-                if d['plugin'] == d['type']:
-                    measurement = f"{d['plugin']}"
-                else: 
-                    measurement = f"{d['plugin']}.{d['type']}"
-                if d['type_instance']:
-                    measurement = f"{measurement}.{d['type_instance']}"
-                resource = d['plugin_instance'] if d['plugin_instance'] else d['plugin']
 
-                if d['dsnames'][i] != 'value':
-                    measurement = f"{measurement}.{d['dsnames'][i]}"
+                #print(f"plugin: {d['plugin']}, type: {d['type']}, plugin_instance: {d['plugin_instance']}, type_instance: {d['type_instance']}, names: {d['dsnames'][i]}")
+
+                if d['plugin'] in ["memory", "ping"]:
+                    measurement = f"{d['plugin']}"
+                    if d['type_instance']:
+                        measurement = f"{d['plugin']}.{d['type_instance']}"
+                    if d['type'] in ["percent", "ping_droprate", "ping_stddev"]:
+                        resource = d['type']
+                    else:
+                        resource = d['plugin_instance'] if d['plugin_instance'] else d['plugin']
+
+                elif d['plugin'] in ["snmp"]:
+                    measurement = f"{d['plugin']}"
+                    if d['type_instance']:
+                        measurement = f"{d['plugin']}.{d['type_instance']}"
+                    if d['type_instance'] == "N_A":
+                        continue
+                    resource = d['type']
+
+                else:
+                    if d['plugin'] == d['type']:
+                        measurement = f"{d['plugin']}"
+                    else: 
+                        measurement = f"{d['plugin']}.{d['type']}"
+
+                    if d['type_instance']:
+                        measurement = f"{measurement}.{d['type_instance']}"
+
+                    resource = d['plugin_instance'] if d['plugin_instance'] else d['plugin']
+
+                    if d['dsnames'][i] != 'value':
+                        measurement = f"{measurement}.{d['dsnames'][i]}"
+
+                #print(measurement, host, resource, d['dsnames'][i], d['values'][i])
 
                 if d['values'][i] != -999:
                     lines.append({
                         "measurement": measurement,
                         "tags": {"host": host, "resource": resource},
-                        "fields": {"value": d['values'][i]},
-                        "time": int(d['time'])
+                        "fields": {"value": float(d['values'][i])},
+                        "time": datetime.utcfromtimestamp(int(d['time'])).isoformat("T")
                     })
         
         if debug:
             for line in lines:
-                print(datetime.fromtimestamp(line['time']), line)
+                print(line['time'], line)
 
         try:
             write_api.write("graphite", "INFN", lines)
@@ -118,7 +143,7 @@ if __name__ == "__main__":
     else:
        http_server = tornado.httpserver.HTTPServer(app)
 
-    client = InfluxDBClient(url="http://localhost:8086", token="", org="INFN")
+    client = InfluxDBClient(url="http://localhost:8086", token=token, org="INFN")
     write_api = client.write_api()
 
     http_server.listen(options.port)
