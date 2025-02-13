@@ -91,13 +91,16 @@ Interval 10
 </Plugin>
 
 <Plugin write_http>
-  <Node "http-collector">
+  <Node "infn">
     URL "https://b2ecl.na.infn.it:8800/put/"
-    Header "Authorization: Basic XXXXXXXXXXXXXXXX"	# modify here with base64 encoding of "user:pass"
+    User "admin"
+    Password "XXXXX"
     VerifyHost false
     VerifyPeer false
     Format "JSON"
+    BufferSize 1024
     StoreRates true
+    Timeout 2500
   </Node>
 </Plugin>
 
